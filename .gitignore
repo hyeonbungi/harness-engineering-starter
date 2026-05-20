@@ -1,0 +1,19 @@
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
+.tmp/
+
+# OS/editor noise
+.DS_Store
+.idea/
+.vscode/
+
+# Dependency directories are stack-specific and should be added intentionally.
+node_modules/
+vendor/
