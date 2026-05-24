@@ -26,6 +26,8 @@
 | `claude-progress.md` | 현재 진행 상태와 다음 세션 인계 요약 |
 | `init.sh` | 스타터 문서와 기본 형식을 검증하는 초기화 스크립트 |
 | `docs/HARNESS.md` | 하네스 엔지니어링 원칙과 적용 방식 |
+| `docs/AGENT_BEHAVIOR.md` | 에이전트가 가정, 범위, 검증을 다루는 행동 기준 |
+| `docs/AGENT_WORKFLOWS.md` | 에이전트 작업 단위, 프롬프트 구조, skill/병렬화/검증 운영 기준 |
 | `docs/BOOTSTRAP.md` | 새 프로젝트로 복제한 뒤 첫 정리 순서 |
 | `docs/INSTRUCTION_HIERARCHY.md` | 전역/스코프 에이전트 문서와 DESIGN.md 해석 규칙 |
 | `docs/OBSERVABILITY.md` | 런타임 신호와 에이전트 작업 추적 템플릿 |

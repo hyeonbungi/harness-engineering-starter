@@ -7,17 +7,23 @@
 1. `README.md`에서 현재 프로젝트 상태를 확인합니다.
 2. `ARCHITECTURE.md`에서 구조와 의존성 원칙을 확인합니다.
 3. `docs/INSTRUCTION_HIERARCHY.md`에서 전역/스코프 문서 해석 규칙을 확인합니다.
-4. 작업 대상 경로가 정해져 있으면 루트에서 대상 경로까지의 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`를 순서대로 찾습니다.
-5. 제품 범위 작업이면 `docs/product-specs/`를 먼저 읽습니다.
-6. 실행 계획이 필요한 작업이면 `docs/PLANS.md`와 `docs/exec-plans/`를 확인합니다.
-7. GUI 또는 디자인 작업이면 적용 가능한 모든 `DESIGN.md`와 `docs/FRONTEND.md`를 확인합니다.
-8. `feature_list.json`, `claude-progress.md`, `docs/session-handoff.md`에서 현재 진행 상태를 확인합니다.
-9. 변경 후 가능한 경우 `./init.sh`를 실행합니다.
+4. `docs/AGENT_BEHAVIOR.md`에서 에이전트 행동 기준을 확인합니다.
+5. `docs/AGENT_WORKFLOWS.md`에서 작업 단위, 표면 선택, 검증 기준을 확인합니다.
+6. 작업 대상 경로가 정해져 있으면 루트에서 대상 경로까지의 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`를 순서대로 찾습니다.
+7. 제품 범위 작업이면 `docs/product-specs/`를 먼저 읽습니다.
+8. 실행 계획이 필요한 작업이면 `docs/PLANS.md`와 `docs/exec-plans/`를 확인합니다.
+9. GUI 또는 디자인 작업이면 적용 가능한 모든 `DESIGN.md`와 `docs/FRONTEND.md`를 확인합니다.
+10. `feature_list.json`, `claude-progress.md`, `docs/session-handoff.md`에서 현재 진행 상태를 확인합니다.
+11. 변경 후 가능한 경우 `./init.sh`를 실행합니다.
 
 ## Core Rules
 
 - 제품명, 기술 스택, 저장소 구조를 임의로 확정하지 않습니다.
 - 사용자의 문장을 그대로 붙여넣지 않고, 의도, 결정, 비목표, 검증 기준으로 정제해서 기록합니다.
+- 모호한 요구는 가정을 명시하고, 되돌리기 어려운 선택이면 먼저 확인합니다.
+- 요청을 만족하는 가장 작은 변경을 선호하고, 미래 확장을 위한 추상화는 보류합니다.
+- 모든 변경은 사용자 요청, 문서화된 결정, 검증 기준 중 하나로 추적 가능해야 합니다.
+- 하나의 프롬프트에는 하나의 주요 변경만 두고, 공유 파일을 건드리는 작업은 직렬화합니다.
 - 한 번에 하나의 주요 작업만 진행합니다.
 - `feature_list.json`에서 동시에 하나의 `in_progress` 항목만 허용합니다.
 - 완료 여부는 문서 체크박스가 아니라 재현 가능한 검증 증거로 판단합니다.
@@ -36,6 +42,8 @@
 | `feature_list.json` | 기능과 결정 상태의 기계 판독용 목록 |
 | `claude-progress.md` | 사람이 읽는 진행 상태 |
 | `docs/HARNESS.md` | 하네스 엔지니어링 적용 원칙 |
+| `docs/AGENT_BEHAVIOR.md` | 에이전트 행동 기준과 완료 전 점검 |
+| `docs/AGENT_WORKFLOWS.md` | 작업 단위, 프롬프트 구조, skill/병렬화/검증 운영 기준 |
 | `docs/BOOTSTRAP.md` | 복제 후 첫 정리 절차 |
 | `docs/INSTRUCTION_HIERARCHY.md` | 전역/스코프 지침 문서 해석 규칙 |
 | `docs/PLANS.md` | 실행 계획 작성 규칙 |

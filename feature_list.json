@@ -3,7 +3,7 @@
   "status": "starter_template",
   "stack": "TBD",
   "repository_shape": "TBD",
-  "last_updated": "2026-05-20",
+  "last_updated": "2026-05-25",
   "rules": {
     "single_active_feature": true,
     "passing_requires_verification": true,
@@ -142,6 +142,63 @@
         "2026-05-20: Linked observability from README.md, docs/HARNESS.md, docs/RELIABILITY.md, and init.sh."
       ],
       "notes": "This is intentionally tool-neutral until the first runtime is selected."
+    },
+    {
+      "id": "FND-005",
+      "priority": 5,
+      "area": "agent_behavior",
+      "title": "Adapt Karpathy-inspired agent behavior guardrails",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "Agents have a project-neutral behavior standard for surfacing assumptions, keeping changes small, avoiding unrelated edits, and finishing with verification evidence.",
+      "acceptance_criteria": [
+        "docs/AGENT_BEHAVIOR.md defines the adapted behavior principles",
+        "AGENTS.md and CLAUDE.md include docs/AGENT_BEHAVIOR.md in startup order",
+        "docs/evaluator-rubric.md checks simplicity and traceability",
+        "docs/references/karpathy-guidelines.md records source and license context",
+        "init.sh validates the new required documents"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Review docs/AGENT_BEHAVIOR.md",
+        "Verify AGENTS.md and CLAUDE.md route agents to the behavior document",
+        "Verify source mapping is recorded in docs/references/karpathy-guidelines.md"
+      ],
+      "evidence": [
+        "2026-05-25: Adapted multica-ai/andrej-karpathy-skills principles into docs/AGENT_BEHAVIOR.md.",
+        "2026-05-25: Added design decision 0003 and source mapping reference.",
+        "2026-05-25: ./init.sh passed after behavior guardrail integration."
+      ],
+      "notes": "The source principles were adapted rather than copied verbatim so the starter remains product-neutral and Korean-first."
+    },
+    {
+      "id": "FND-006",
+      "priority": 6,
+      "area": "agent_workflows",
+      "title": "Add agent workflow operating model",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "Agents have a project-neutral workflow model for task briefs, surface selection, single-change execution, skills, parallel work, tool hygiene, and verification depth.",
+      "acceptance_criteria": [
+        "docs/AGENT_WORKFLOWS.md defines task-first agent workflow rules",
+        "AGENTS.md and CLAUDE.md include docs/AGENT_WORKFLOWS.md in startup order",
+        "docs/evaluator-rubric.md checks task separation",
+        "docs/references/avid-codex-builder-course.md records source mapping and exclusions",
+        "init.sh validates the new required documents"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run git diff --check",
+        "Review docs/AGENT_WORKFLOWS.md",
+        "Verify source mapping is recorded in docs/references/avid-codex-builder-course.md"
+      ],
+      "evidence": [
+        "2026-05-25: Read Avid's X article through the Codex in-app browser.",
+        "2026-05-25: Adapted durable workflow patterns into docs/AGENT_WORKFLOWS.md.",
+        "2026-05-25: Added design decision 0004 and source mapping reference.",
+        "2026-05-25: ./init.sh and git diff --check passed after workflow integration."
+      ],
+      "notes": "Version-specific Codex claims, model names, release dates, and command cheat sheets were intentionally excluded from the starter."
     },
     {
       "id": "TECH-001",

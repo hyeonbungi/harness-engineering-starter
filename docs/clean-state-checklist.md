@@ -5,6 +5,8 @@
 - [ ] `./init.sh`가 성공합니다.
 - [ ] `feature_list.json`이 실제 상태를 반영합니다.
 - [ ] `claude-progress.md`가 최신 검증 상태와 다음 단계를 기록합니다.
+- [ ] 변경 범위가 `docs/AGENT_BEHAVIOR.md`의 가정, 단순성, 추적성, 검증 기준과 맞습니다.
+- [ ] 작업 단위, 병렬화, 도구 권한, 행동 검증 여부가 `docs/AGENT_WORKFLOWS.md` 기준과 맞습니다.
 - [ ] 긴 세션이었거나 미검증 항목이 있으면 `docs/session-handoff.md`가 갱신되어 있습니다.
 - [ ] 경로별 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`를 추가했다면 전역 규칙과 충돌하지 않습니다.
 - [ ] 새로 만든 임시 파일, 디버그 로그, 불필요한 산출물이 없습니다.

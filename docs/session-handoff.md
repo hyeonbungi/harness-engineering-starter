@@ -13,6 +13,8 @@
 - 특정 저장소 구조 전제와 앱/라이브러리 자리표시자를 제거했습니다.
 - 남은 문서를 복제용 스타터 템플릿으로 정리했습니다.
 - 전역/스코프 에이전트 문서와 `DESIGN.md` 계층 규칙을 추가했습니다.
+- `multica-ai/andrej-karpathy-skills`의 행동 원칙을 `docs/AGENT_BEHAVIOR.md`로 재구성하고, 출처와 결정 기록을 추가했습니다.
+- Avid의 Codex 운영 article에서 장기적으로 유효한 workflow 원칙만 `docs/AGENT_WORKFLOWS.md`로 재구성했습니다.
 
 ## Next Best Task
 
@@ -25,6 +27,8 @@
 - `feature_list.json`에서 `PROD-001` 상태가 갱신되어 있습니다.
 - `./init.sh`가 성공합니다.
 - GUI 범위가 생기면 적용 가능한 `DESIGN.md` 계층이 정해져 있습니다.
+- 에이전트 작업은 가정 명시, 최소 변경, 추적 가능한 diff, 검증 증거 기준을 따릅니다.
+- 에이전트 작업은 task-first, single-change, plan-first, 행동 검증, tool hygiene 기준을 따릅니다.
 
 ## Known Unknowns
 

@@ -6,12 +6,13 @@
 
 | Area | Score | Status | Risk | Next Step |
 | --- | --- | --- | --- | --- |
-| Agent Readability | B | 기본 지침 있음 | 낮음 | 실제 프로젝트 규칙으로 갱신 |
+| Agent Readability | B | 기본 지침, 행동 기준, workflow 기준 있음 | 낮음 | 실제 프로젝트 규칙으로 갱신 |
 | Product Definition | D | 템플릿만 있음 | 높음 | 문제 정의 작성 |
 | Technical Foundation | D | 스택 미정 | 높음 | 제품 범위 후 결정 |
 | Verification | C | 문서 검증만 있음 | 중간 | 스택 결정 후 빌드/테스트 추가 |
 | Handoff | B | 진행/인계 문서 있음 | 낮음 | 실제 작업마다 갱신 |
 | Frontend Design Support | B | 전역/스코프 DESIGN.md 규칙 있음 | 중간 | 실제 브랜드와 플랫폼별 명세로 갱신 |
+| Agent Workflow Support | B | task brief, skill, 병렬화, 검증 ladder 기준 있음 | 중간 | 실제 반복 작업이 생기면 skill로 승격 |
 
 ## Interpretation
 
@@ -29,3 +30,5 @@
 - 로컬 실행 명령과 검증 명령이 있습니다.
 - GUI 범위는 적용 가능한 `DESIGN.md` 계층을 갖고 있습니다.
 - 다음 세션이 미완성 상태를 확인할 수 있습니다.
+- 에이전트 작업 기준이 가정, 단순성, 추적성, 검증 증거를 확인합니다.
+- 에이전트 workflow 기준이 작업 분리, 표면 선택, skill 승격, 병렬화, 도구 권한을 확인합니다.

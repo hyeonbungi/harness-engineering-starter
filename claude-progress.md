@@ -34,6 +34,8 @@
 - [x] 실행 계획과 인계 문서 작성
 - [x] 기본 검증 스크립트 작성
 - [x] 전역/스코프 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md` 해석 규칙 작성
+- [x] Karpathy-inspired 에이전트 행동 기준을 하네스 스타터 방식으로 적용
+- [x] Avid의 Codex 운영 article에서 장기적으로 유효한 agent workflow 기준을 추출해 적용
 
 ## Not Started
 
@@ -52,3 +54,5 @@
 
 - 2026-05-20: 스타터를 제품 중립 하네스 기준선으로 재정리했습니다. 검증은 변경 후 실행해야 합니다.
 - 2026-05-20: GUI 작업의 `DESIGN.md` 필수 사용과 전역/스코프 문서 계층 규칙을 추가했습니다.
+- 2026-05-25: `multica-ai/andrej-karpathy-skills`의 네 가지 원칙을 `docs/AGENT_BEHAVIOR.md`, 평가 루브릭, 검증 목록에 맞게 적용했습니다. `./init.sh`가 통과했습니다.
+- 2026-05-25: Avid의 `How to Master Codex in 2026 (Builder's Course)` article에서 task brief, single-change, plan-first, skill 후보, 병렬화, 검증 ladder, tool hygiene 원칙을 `docs/AGENT_WORKFLOWS.md`로 적용했습니다. `./init.sh`와 `git diff --check`가 통과했습니다.

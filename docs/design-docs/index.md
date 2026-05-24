@@ -6,6 +6,8 @@
 
 - `0001-agent-readable-repository.md`
 - `0002-scoped-agent-and-design-docs.md`
+- `0003-agent-behavior-guardrails.md`
+- `0004-agent-workflow-operating-model.md`
 
 ## Template
 
