@@ -16,6 +16,7 @@ required_files=(
   "docs/AGENT_BEHAVIOR.md"
   "docs/AGENT_WORKFLOWS.md"
   "docs/BOOTSTRAP.md"
+  "docs/README_MIGRATION.md"
   "docs/INSTRUCTION_HIERARCHY.md"
   "docs/FRONTEND.md"
   "docs/OBSERVABILITY.md"

@@ -201,6 +201,32 @@
       "notes": "Version-specific Codex claims, model names, release dates, and command cheat sheets were intentionally excluded from the starter."
     },
     {
+      "id": "FND-007",
+      "priority": 7,
+      "area": "bootstrap",
+      "title": "Document README migration after cloning",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "A cloned project has a checklist for replacing starter README content with project-specific title, badges, status, ownership, and validation details.",
+      "acceptance_criteria": [
+        "docs/README_MIGRATION.md defines required README changes after cloning",
+        "README.md links to docs/README_MIGRATION.md from the repository map and start guide",
+        "docs/BOOTSTRAP.md routes first project-specific pass through the README migration checklist",
+        "init.sh validates docs/README_MIGRATION.md as a required starter document"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run git diff --check",
+        "Render docs/README_MIGRATION.md through GitHub Markdown API"
+      ],
+      "evidence": [
+        "2026-05-25: Added docs/README_MIGRATION.md.",
+        "2026-05-25: Linked README migration from README.md and docs/BOOTSTRAP.md.",
+        "2026-05-25: ./init.sh, git diff --check, and GitHub Markdown rendering passed."
+      ],
+      "notes": "The checklist covers badges, ownership, starter-specific copy, current state, and validation commands."
+    },
+    {
       "id": "TECH-001",
       "priority": 20,
       "area": "technical_foundation",

@@ -53,6 +53,7 @@
 | `docs/AGENT_BEHAVIOR.md` | 에이전트가 가정, 범위, 검증을 다루는 행동 기준 |
 | `docs/AGENT_WORKFLOWS.md` | 에이전트 작업 단위, 프롬프트 구조, skill/병렬화/검증 운영 기준 |
 | `docs/BOOTSTRAP.md` | 새 프로젝트로 복제한 뒤 첫 정리 순서 |
+| `docs/README_MIGRATION.md` | 복제 후 공개 README를 실제 프로젝트용으로 바꾸는 체크리스트 |
 | `docs/INSTRUCTION_HIERARCHY.md` | 전역/스코프 에이전트 문서와 DESIGN.md 해석 규칙 |
 | `docs/OBSERVABILITY.md` | 런타임 신호와 에이전트 작업 추적 템플릿 |
 | `docs/PLANS.md` | 실행 계획 작성 규칙 |
@@ -74,7 +75,7 @@
 
 ## How To Start A Real Project
 
-1. `README.md`의 `Current State`에서 복제 후 프로젝트 이름과 도메인을 실제 값으로 바꿉니다.
+1. `docs/README_MIGRATION.md`를 따라 공개 README를 실제 프로젝트 상태로 바꿉니다.
 2. `docs/product-specs/project-foundation.md`에 문제 정의, 대상 사용자, 첫 성공 기준을 작성합니다.
 3. 저장소 구조가 필요해지는 시점에 `ARCHITECTURE.md`에 결정 근거와 경계를 기록합니다.
 4. 기술 스택을 선택하면 `feature_list.json`, `init.sh`, `docs/QUALITY_SCORE.md`를 함께 갱신합니다.

@@ -15,6 +15,7 @@
 - 전역/스코프 에이전트 문서와 `DESIGN.md` 계층 규칙을 추가했습니다.
 - `multica-ai/andrej-karpathy-skills`의 행동 원칙을 `docs/AGENT_BEHAVIOR.md`로 재구성하고, 출처와 결정 기록을 추가했습니다.
 - Avid의 Codex 운영 article에서 장기적으로 유효한 workflow 원칙만 `docs/AGENT_WORKFLOWS.md`로 재구성했습니다.
+- 복제 후 공개 README를 실제 프로젝트용으로 바꾸는 `docs/README_MIGRATION.md` 체크리스트를 추가했습니다.
 
 ## Next Best Task
 
@@ -23,6 +24,7 @@
 ## Passing Condition
 
 - 복제 후 프로젝트 이름과 문제 정의가 기록되어 있습니다.
+- `docs/README_MIGRATION.md` 기준으로 README의 제목, 배지, 상태, 소유권, 검증 명령이 갱신되어 있습니다.
 - 첫 사용자와 첫 성공 기준이 정해져 있습니다.
 - `feature_list.json`에서 `PROD-001` 상태가 갱신되어 있습니다.
 - `./init.sh`가 성공합니다.
