@@ -37,6 +37,10 @@
 - [x] Karpathy-inspired 에이전트 행동 기준을 하네스 스타터 방식으로 적용
 - [x] Avid의 Codex 운영 article에서 장기적으로 유효한 agent workflow 기준을 추출해 적용
 - [x] 복제 후 README를 실제 프로젝트용으로 바꾸는 migration 체크리스트 추가
+- [x] 루트 README를 영어 기본 `README.md`와 한국어 `README.ko.md`로 이중화
+- [x] MIT 라이선스를 루트 `LICENSE` 원천 파일로 추가
+- [x] 내부 디자인 기준인 `DESIGN.md`를 한국어 단일 원천으로 전환
+- [x] 복제 후 스타터 제작 이력을 정리하는 `docs/CLONE_CLEANUP.md` 추가
 
 ## Not Started
 
@@ -58,3 +62,7 @@
 - 2026-05-25: `multica-ai/andrej-karpathy-skills`의 네 가지 원칙을 `docs/AGENT_BEHAVIOR.md`, 평가 루브릭, 검증 목록에 맞게 적용했습니다. `./init.sh`가 통과했습니다.
 - 2026-05-25: Avid의 `How to Master Codex in 2026 (Builder's Course)` article에서 task brief, single-change, plan-first, skill 후보, 병렬화, 검증 ladder, tool hygiene 원칙을 `docs/AGENT_WORKFLOWS.md`로 적용했습니다. `./init.sh`와 `git diff --check`가 통과했습니다.
 - 2026-05-25: `docs/README_MIGRATION.md`를 추가하고 `README.md`, `docs/BOOTSTRAP.md`, `init.sh`, `feature_list.json`에 연결했습니다. `./init.sh`, `git diff --check`, GitHub Markdown 렌더링이 통과했습니다.
+- 2026-05-31: `README.md`를 영어 기본 문서로 바꾸고, 한국어 문서는 `README.ko.md`로 분리했습니다. `docs/README_MIGRATION.md`와 `init.sh`도 이중화 기준에 맞게 갱신했습니다.
+- 2026-05-31: 루트 `LICENSE`에 MIT 라이선스를 추가하고, `README.md`, `README.ko.md`, `docs/README_MIGRATION.md`, `init.sh`에 연결했습니다.
+- 2026-05-31: `DESIGN.md` 본문을 한국어로 전환하고, `docs/FRONTEND.md`와 `docs/README_MIGRATION.md`에 내부 디자인 문서는 한국어 단일 원천이라는 기준을 추가했습니다.
+- 2026-05-31: `docs/CLONE_CLEANUP.md`를 추가하고, 복제 후 keep/reset/decide/remove 기준과 sensitive-information check, simulation check를 문서화했습니다.

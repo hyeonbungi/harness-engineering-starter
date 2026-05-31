@@ -8,13 +8,20 @@
   <img alt="Stack: TBD" src="https://img.shields.io/badge/stack-TBD-lightgrey?style=flat-square">
   <img alt="Validation: ./init.sh" src="https://img.shields.io/badge/validation-.%2Finit.sh-2ea44f?style=flat-square">
   <img alt="Agent docs: AGENTS.md plus CLAUDE.md" src="https://img.shields.io/badge/agent_docs-AGENTS.md%20%2B%20CLAUDE.md-7c3aed?style=flat-square">
+  <a href="./LICENSE">
+    <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111827?style=flat-square">
+  </a>
 </p>
 
-> 새 프로젝트를 시작하기 전에 맥락, 결정, 계획, 검증 방법을 먼저 정리해두는 스타터입니다.
+<p align="center">
+  English | <a href="./README.ko.md">한국어</a>
+</p>
 
-`harness-engineering-starter`는 아직 제품명도, 기술 스택도 정하지 않은 상태에서 시작하는 프로젝트용 템플릿입니다. 코드를 먼저 만들기보다 에이전트와 사람이 같은 문맥을 읽고, 무엇을 만들지와 어떻게 검증할지를 먼저 정리하는 데 초점을 둡니다.
+> A starter for setting down project context, decisions, plans, and validation before writing application code.
 
-현재 이 저장소에는 애플리케이션 코드가 없습니다. 제품명, 저장소 구조, 기술 스택, 배포 대상은 이 스타터를 복사한 뒤 실제 프로젝트에 맞게 정합니다.
+`harness-engineering-starter` is a template for projects that have not chosen a product name, technical stack, or repository shape yet. It focuses on giving humans and coding agents the same starting context before implementation begins.
+
+There is no application code in this repository. Product scope, repository structure, technical stack, and deployment target are meant to be decided after cloning this starter into a real project.
 
 ## At A Glance
 
@@ -26,44 +33,49 @@
 | Repository shape | TBD |
 | Application code | None yet |
 | Baseline validation | `./init.sh` |
+| License | MIT |
 | Primary author | [hyeonbungi](https://github.com/hyeonbungi) |
 
 ## Current State
 
-- 현재 저장소 이름: `harness-engineering-starter`
-- 복제 후 프로젝트 이름: TBD
-- 제품 또는 도메인: TBD
-- 기술 스택: TBD
-- 저장소 구조: TBD
-- 구현 코드: 없음
-- 기본 검증 명령: `./init.sh`
+- Current repository name: `harness-engineering-starter`
+- Project name after cloning: TBD
+- Product or domain: TBD
+- Technical stack: TBD
+- Repository shape: TBD
+- Application code: none
+- Baseline validation command: `./init.sh`
 
 ## Repository Map
 
 | Path | Purpose |
 | --- | --- |
-| `AGENTS.md` | Codex와 범용 코드 에이전트가 먼저 읽는 작업 지침 |
-| `CLAUDE.md` | Claude Code용 작업 지침 |
-| `ARCHITECTURE.md` | 구조와 의존성 원칙을 기록하는 자리 |
-| `DESIGN.md` | GUI 작업이 생겼을 때 읽는 전역 디자인 기준 |
-| `feature_list.json` | 기능, 문서, 결정 상태를 기계가 읽을 수 있게 추적 |
-| `claude-progress.md` | 사람이 읽는 진행 상태와 다음 세션 인계 |
-| `init.sh` | 현재 문서 세트와 기본 형식을 확인하는 검증 스크립트 |
-| `docs/HARNESS.md` | 이 스타터가 따르는 하네스 운영 원칙 |
-| `docs/AGENT_BEHAVIOR.md` | 에이전트가 가정, 범위, 검증을 다루는 기준 |
-| `docs/AGENT_WORKFLOWS.md` | 작업 단위, 프롬프트 구조, skill, 병렬화, 검증 기준 |
-| `docs/BOOTSTRAP.md` | 새 프로젝트로 복사한 뒤 처음 정리할 순서 |
-| `docs/README_MIGRATION.md` | 공개 README를 실제 프로젝트용으로 바꾸는 체크리스트 |
-| `docs/INSTRUCTION_HIERARCHY.md` | 전역/스코프 지침 문서를 해석하는 방법 |
-| `docs/OBSERVABILITY.md` | 런타임 신호와 에이전트 작업 흔적을 남기는 템플릿 |
-| `docs/PLANS.md` | 실행 계획을 쓸 때의 최소 기준 |
-| `docs/product-specs/` | 제품 문제, 사용자, 성공 기준을 적는 위치 |
-| `docs/design-docs/` | 되돌리기 어려운 구조적 결정을 남기는 위치 |
-| `docs/references/` | 긴 참고 자료와 외부 링크 요약 |
-| `docs/exec-plans/` | 활성 계획, 완료 계획, 기술 부채 기록 |
-| `docs/generated/` | 다시 만들 수 있는 에이전트 산출물 위치 |
-| `scripts/` | 스택이 정해진 뒤 운영 스크립트를 둘 위치 |
-| `tests/` | 스택이 정해진 뒤 테스트를 둘 위치 |
+| `README.md` | Default English project entry point |
+| `README.ko.md` | Korean version of the project entry point |
+| `LICENSE` | MIT license text and copyright notice |
+| `AGENTS.md` | Instructions read first by Codex and general coding agents |
+| `CLAUDE.md` | Instructions for Claude Code |
+| `ARCHITECTURE.md` | Place to record structure and dependency principles |
+| `DESIGN.md` | Global design baseline for future GUI work |
+| `feature_list.json` | Machine-readable tracking for features, documents, and decisions |
+| `claude-progress.md` | Human-readable progress and handoff notes |
+| `init.sh` | Baseline script that checks required files and document format |
+| `docs/HARNESS.md` | Harness operating principles used by this starter |
+| `docs/AGENT_BEHAVIOR.md` | Rules for how agents handle assumptions, scope, and verification |
+| `docs/AGENT_WORKFLOWS.md` | Task units, prompt structure, skills, parallelism, and verification rules |
+| `docs/BOOTSTRAP.md` | First cleanup steps after copying this starter |
+| `docs/CLONE_CLEANUP.md` | Cleanup checklist for removing starter-specific history after cloning |
+| `docs/README_MIGRATION.md` | Checklist for turning the public README into a project-specific README |
+| `docs/INSTRUCTION_HIERARCHY.md` | How to resolve global and scoped instruction files |
+| `docs/OBSERVABILITY.md` | Template for runtime signals and agent work traces |
+| `docs/PLANS.md` | Minimum rules for writing execution plans |
+| `docs/product-specs/` | Place to define product problem, users, and success criteria |
+| `docs/design-docs/` | Place to record structural decisions that are hard to reverse |
+| `docs/references/` | Long references and external link summaries |
+| `docs/exec-plans/` | Active plans, completed plans, and technical debt notes |
+| `docs/generated/` | Regenerable agent artifacts |
+| `scripts/` | Future home for operational scripts after a stack is chosen |
+| `tests/` | Future home for tests after a stack is chosen |
 
 ## Bootstrap
 
@@ -71,19 +83,20 @@
 ./init.sh
 ```
 
-`init.sh`는 필요한 문서가 빠지지 않았는지, `feature_list.json`이 유효한 JSON인지, `DESIGN.md`가 기본 frontmatter를 갖췄는지 확인합니다. 빌드, 테스트, 린트 명령은 기술 스택이 정해진 뒤 추가합니다.
+`init.sh` checks that required documents exist, `feature_list.json` is valid JSON, and `DESIGN.md` has the expected frontmatter. Build, test, and lint commands should be added after the technical stack is selected.
 
 ## How To Start A Real Project
 
-1. `docs/README_MIGRATION.md`를 따라 공개 README에서 스타터 흔적을 실제 프로젝트 정보로 바꿉니다.
-2. `docs/product-specs/project-foundation.md`에 문제 정의, 대상 사용자, 첫 성공 기준을 적습니다.
-3. 저장소 구조가 필요해지는 시점에 `ARCHITECTURE.md`에 선택 이유와 경계를 기록합니다.
-4. 기술 스택을 고르면 `feature_list.json`, `init.sh`, `docs/QUALITY_SCORE.md`도 함께 갱신합니다.
-5. GUI 작업이 시작되면 `DESIGN.md`를 실제 브랜드와 제품 톤에 맞게 고칩니다.
+1. Follow `docs/README_MIGRATION.md` and replace starter-specific README content with real project information.
+2. Follow `docs/CLONE_CLEANUP.md` and reset starter-specific progress, handoff, and feature history.
+3. Fill out `docs/product-specs/project-foundation.md` with the problem statement, target users, and first success criteria.
+4. When repository structure becomes necessary, record the choice and boundaries in `ARCHITECTURE.md`.
+5. When a technical stack is chosen, update `feature_list.json`, `init.sh`, and `docs/QUALITY_SCORE.md` together.
+6. When GUI work begins, revise `DESIGN.md` for the actual brand and product tone.
 
 ## Instruction And Design Hierarchy
 
-루트의 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`는 저장소 전체에 적용되는 기본값입니다. 프로젝트가 여러 앱, 라이브러리, 패키지, 서비스로 나뉘면 하위 경로에 같은 이름의 문서를 둘 수 있습니다.
+Root-level `AGENTS.md`, `CLAUDE.md`, and `DESIGN.md` are the defaults for the whole repository. If the project grows into multiple apps, packages, libraries, or services, the same file names can be added under narrower paths.
 
 ```text
 AGENTS.md
@@ -94,16 +107,20 @@ path/to/scope/CLAUDE.md
 path/to/scope/DESIGN.md
 ```
 
-에이전트는 작업 대상 파일을 기준으로 루트에서 대상 경로까지의 문서를 순서대로 읽습니다. 하위 경로 문서는 전역 문서를 통째로 대체하지 않고, 그 범위에 필요한 규칙만 추가하거나 명시적으로 덮어씁니다.
+Agents read the files from the repository root down to the target path. A scoped file does not replace the root document wholesale; it only adds or explicitly overrides rules for that scope.
 
-GUI를 만들거나 수정할 때는 `DESIGN.md`를 읽습니다. 전역 `DESIGN.md`만으로 충분하면 그 이유를 남기고, 범위별 차이가 있으면 해당 경로에 전용 `DESIGN.md`를 둡니다.
+Read `DESIGN.md` before creating or changing GUI surfaces. If the global design document is enough, note why. If a scope needs different design rules, add a scoped `DESIGN.md` there.
 
 ## Operating Rule
 
-사용자 프롬프트를 그대로 붙여 넣지 않습니다. 의도, 결정, 비목표, 검증 기준으로 정리한 뒤 제품 명세, 실행 계획, 결정 기록 중 맞는 위치에 반영합니다.
+Do not paste user prompts directly into project documents. Rewrite them into intent, decisions, non-goals, and validation criteria, then place them in the relevant product spec, execution plan, or decision record.
 
 ## Author
 
 - Original author and maintainer: [hyeonbungi](https://github.com/hyeonbungi)
 
 This starter is maintained as a public project template. Project-specific forks should replace this section only when ownership is intentionally transferred.
+
+## License
+
+MIT. See [LICENSE](./LICENSE).

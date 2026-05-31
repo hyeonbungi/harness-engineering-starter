@@ -3,7 +3,7 @@
   "status": "starter_template",
   "stack": "TBD",
   "repository_shape": "TBD",
-  "last_updated": "2026-05-25",
+  "last_updated": "2026-05-31",
   "rules": {
     "single_active_feature": true,
     "passing_requires_verification": true,
@@ -225,6 +225,117 @@
         "2026-05-25: ./init.sh, git diff --check, and GitHub Markdown rendering passed."
       ],
       "notes": "The checklist covers badges, ownership, starter-specific copy, current state, and validation commands."
+    },
+    {
+      "id": "FND-008",
+      "priority": 8,
+      "area": "documentation",
+      "title": "Provide bilingual root README files",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "The public GitHub landing page is English by default while Korean readers can use a root-level Korean README with matching structure.",
+      "acceptance_criteria": [
+        "README.md is the English default README",
+        "README.ko.md contains the Korean README",
+        "Both README files link to each other",
+        "docs/README_MIGRATION.md documents the root README language policy",
+        "init.sh validates README.ko.md as a required starter document"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run git diff --check",
+        "Render README.md and README.ko.md through GitHub Markdown API"
+      ],
+      "evidence": [
+        "2026-05-31: Converted README.md to English default.",
+        "2026-05-31: Added README.ko.md as the Korean root README.",
+        "2026-05-31: Updated README migration language policy and init.sh required files.",
+        "2026-05-31: ./init.sh, git diff --check, and GitHub Markdown rendering passed."
+      ],
+      "notes": "Only the root README files are bilingual for now; docs/ remains single-language until a concrete need appears."
+    },
+    {
+      "id": "FND-009",
+      "priority": 9,
+      "area": "licensing",
+      "title": "Apply MIT license",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "The public starter repository has a root LICENSE file and README links that clearly identify MIT licensing.",
+      "acceptance_criteria": [
+        "LICENSE contains MIT license text with copyright holder",
+        "README.md and README.ko.md link to LICENSE",
+        "README.md and README.ko.md show MIT license in the public summary",
+        "docs/README_MIGRATION.md states that LICENSE is the source of truth",
+        "init.sh validates LICENSE as a required starter document"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run git diff --check",
+        "Render README.md and README.ko.md through GitHub Markdown API"
+      ],
+      "evidence": [
+        "2026-05-31: Added root LICENSE with MIT license text.",
+        "2026-05-31: Linked LICENSE from English and Korean README files.",
+        "2026-05-31: Updated README migration guidance and init.sh required files.",
+        "2026-05-31: ./init.sh, git diff --check, and GitHub Markdown rendering passed."
+      ],
+      "notes": "The root LICENSE file is the license source of truth. README files only summarize and link to it."
+    },
+    {
+      "id": "FND-010",
+      "priority": 10,
+      "area": "design",
+      "title": "Localize design baseline to Korean",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "The internal DESIGN.md baseline is written in Korean so GUI work follows the user's operating language while README remains bilingual.",
+      "acceptance_criteria": [
+        "DESIGN.md keeps required YAML frontmatter",
+        "DESIGN.md body is localized to Korean",
+        "docs/FRONTEND.md documents that DESIGN.md is a Korean single source",
+        "docs/README_MIGRATION.md states that only root README files are bilingual for now"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run git diff --check",
+        "Verify DESIGN.md frontmatter remains valid"
+      ],
+      "evidence": [
+        "2026-05-31: Rewrote DESIGN.md body in Korean while preserving frontmatter.",
+        "2026-05-31: Updated docs/FRONTEND.md and docs/README_MIGRATION.md with language policy.",
+        "2026-05-31: ./init.sh and git diff --check passed."
+      ],
+      "notes": "README files are bilingual. Internal design guidance remains a single Korean source until external contribution needs change."
+    },
+    {
+      "id": "FND-011",
+      "priority": 11,
+      "area": "bootstrap",
+      "title": "Document clone cleanup and simulate starter copy",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "A user can copy the starter into a new project and identify which starter-specific history should be kept, reset, decided, or removed.",
+      "acceptance_criteria": [
+        "docs/CLONE_CLEANUP.md defines keep, reset, decide, and sensitive-information checks",
+        "README.md and README.ko.md link to docs/CLONE_CLEANUP.md from the project-start flow",
+        "docs/BOOTSTRAP.md routes first project-specific pass through clone cleanup",
+        "init.sh validates docs/CLONE_CLEANUP.md as a required starter document",
+        "A temporary copied workspace passes the baseline validation"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run git diff --check",
+        "Copy the working tree to a temporary directory excluding .git",
+        "Run ./init.sh in the temporary copy",
+        "Run the sensitive-information search from docs/CLONE_CLEANUP.md"
+      ],
+      "evidence": [
+        "2026-05-31: Added docs/CLONE_CLEANUP.md.",
+        "2026-05-31: Linked clone cleanup from README.md, README.ko.md, docs/BOOTSTRAP.md, and init.sh.",
+        "2026-05-31: Temporary clone simulation passed ./init.sh and sensitive-information search found no secrets."
+      ],
+      "notes": "The cleanup guide distinguishes information needed by the starter itself from history that should be reset in a cloned project."
     },
     {
       "id": "TECH-001",
