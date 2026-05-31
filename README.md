@@ -46,6 +46,19 @@ There is no application code in this repository. Product scope, repository struc
 - Application code: none
 - Baseline validation command: `./init.sh`
 
+## Who This Is For
+
+- Maintainers starting a new project with coding agents in the loop
+- Teams that want project context, decision records, and validation habits before selecting a stack
+- Repositories that need clear `AGENTS.md`, `CLAUDE.md`, and `DESIGN.md` hierarchy from day one
+- Starter users who prefer explicit `TBD` fields over guessed product or architecture defaults
+
+## Not For
+
+- Projects that need a ready-made web app, API server, CLI, or package scaffold
+- Teams that already know their stack and want framework-specific generators
+- Repositories that should hide planning, handoff, or agent workflow documents from public view
+
 ## Repository Map
 
 | Path | Purpose |
@@ -53,6 +66,9 @@ There is no application code in this repository. Product scope, repository struc
 | `README.md` | Default English project entry point |
 | `README.ko.md` | Korean version of the project entry point |
 | `LICENSE` | MIT license text and copyright notice |
+| `CONTRIBUTING.md` | Public contribution guidance for this starter |
+| `SECURITY.md` | Public security reporting policy for this starter |
+| `CHANGELOG.md` | Public change log before tagged releases exist |
 | `AGENTS.md` | Instructions read first by Codex and general coding agents |
 | `CLAUDE.md` | Instructions for Claude Code |
 | `ARCHITECTURE.md` | Place to record structure and dependency principles |
@@ -66,6 +82,7 @@ There is no application code in this repository. Product scope, repository struc
 | `docs/BOOTSTRAP.md` | First cleanup steps after copying this starter |
 | `docs/CLONE_CLEANUP.md` | Cleanup checklist for removing starter-specific history after cloning |
 | `docs/README_MIGRATION.md` | Checklist for turning the public README into a project-specific README |
+| `docs/STARTER_COPY_SIMULATION.md` | Evidence template for checking whether the starter copies cleanly |
 | `docs/INSTRUCTION_HIERARCHY.md` | How to resolve global and scoped instruction files |
 | `docs/OBSERVABILITY.md` | Template for runtime signals and agent work traces |
 | `docs/PLANS.md` | Minimum rules for writing execution plans |
@@ -93,6 +110,14 @@ There is no application code in this repository. Product scope, repository struc
 4. When repository structure becomes necessary, record the choice and boundaries in `ARCHITECTURE.md`.
 5. When a technical stack is chosen, update `feature_list.json`, `init.sh`, and `docs/QUALITY_SCORE.md` together.
 6. When GUI work begins, revise `DESIGN.md` for the actual brand and product tone.
+
+## Maintenance Signals
+
+- Baseline validation: `./init.sh`
+- Contribution guide: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- Security policy: [SECURITY.md](./SECURITY.md)
+- Change log: [CHANGELOG.md](./CHANGELOG.md)
+- Starter copy simulation: [docs/STARTER_COPY_SIMULATION.md](./docs/STARTER_COPY_SIMULATION.md)
 
 ## Instruction And Design Hierarchy
 

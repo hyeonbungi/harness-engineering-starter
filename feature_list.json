@@ -338,6 +338,37 @@
       "notes": "The cleanup guide distinguishes information needed by the starter itself from history that should be reset in a cloned project."
     },
     {
+      "id": "FND-012",
+      "priority": 12,
+      "area": "public_oss",
+      "title": "Add public OSS maintenance documents",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "The public starter has contribution, security, changelog, audience, maintenance signal, and copy-simulation guidance before broader OSS submission.",
+      "acceptance_criteria": [
+        "CONTRIBUTING.md explains appropriate contribution scope and validation expectations",
+        "SECURITY.md explains public security reporting and supported scope",
+        "CHANGELOG.md records unreleased public starter changes",
+        "README.md and README.ko.md clarify who the starter is for and not for",
+        "docs/STARTER_COPY_SIMULATION.md records how to validate a clean copied workspace",
+        "init.sh validates the new public maintenance documents"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run python3 -m json.tool feature_list.json",
+        "Run git diff --check",
+        "Run a temporary copy simulation excluding .git",
+        "Verify GitHub repository topics and template setting"
+      ],
+      "evidence": [
+        "2026-05-31: Added CONTRIBUTING.md, SECURITY.md, CHANGELOG.md, and docs/STARTER_COPY_SIMULATION.md.",
+        "2026-05-31: Updated README.md and README.ko.md with audience, non-audience, and maintenance signal sections.",
+        "2026-05-31: Updated bootstrap, clone cleanup, README migration, security baseline, and init.sh references.",
+        "2026-05-31: ./init.sh, feature_list.json validation, git diff --check, temporary copy simulation, and GitHub repository metadata checks passed."
+      ],
+      "notes": "No release tag or application stack was added. The project remains an early public starter with explicit reuse and maintenance guidance."
+    },
+    {
       "id": "TECH-001",
       "priority": 20,
       "area": "technical_foundation",

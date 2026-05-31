@@ -46,6 +46,19 @@
 - 구현 코드: 없음
 - 기본 검증 명령: `./init.sh`
 
+## Who This Is For
+
+- 코딩 에이전트를 함께 사용하며 새 프로젝트를 시작하는 maintainer
+- 스택을 고르기 전에 프로젝트 맥락, 결정 기록, 검증 습관을 먼저 세우고 싶은 팀
+- 처음부터 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md` 계층을 명확히 두고 싶은 저장소
+- 제품이나 구조를 추측으로 채우기보다 `TBD`를 명시적으로 남기고 싶은 스타터 사용자
+
+## Not For
+
+- 바로 실행되는 웹앱, API 서버, CLI, 패키지 scaffold가 필요한 프로젝트
+- 이미 기술 스택이 정해져 있고 프레임워크 전용 generator를 원하는 팀
+- 계획, 인계, 에이전트 workflow 문서를 공개 저장소에 두면 안 되는 프로젝트
+
 ## Repository Map
 
 | Path | Purpose |
@@ -53,6 +66,9 @@
 | `README.md` | 영어 기본 프로젝트 진입점 |
 | `README.ko.md` | 한국어 프로젝트 진입점 |
 | `LICENSE` | MIT 라이선스 전문과 저작권 고지 |
+| `CONTRIBUTING.md` | 이 스타터에 대한 공개 기여 가이드 |
+| `SECURITY.md` | 이 스타터에 대한 공개 보안 신고 정책 |
+| `CHANGELOG.md` | 태그 릴리스 전까지의 공개 변경 기록 |
 | `AGENTS.md` | Codex와 범용 코드 에이전트가 먼저 읽는 작업 지침 |
 | `CLAUDE.md` | Claude Code용 작업 지침 |
 | `ARCHITECTURE.md` | 구조와 의존성 원칙을 기록하는 자리 |
@@ -66,6 +82,7 @@
 | `docs/BOOTSTRAP.md` | 새 프로젝트로 복사한 뒤 처음 정리할 순서 |
 | `docs/CLONE_CLEANUP.md` | 복제 후 스타터 제작 이력을 정리하는 체크리스트 |
 | `docs/README_MIGRATION.md` | 공개 README를 실제 프로젝트용으로 바꾸는 체크리스트 |
+| `docs/STARTER_COPY_SIMULATION.md` | 스타터가 깨끗하게 복사되는지 확인하는 증거 템플릿 |
 | `docs/INSTRUCTION_HIERARCHY.md` | 전역/스코프 지침 문서를 해석하는 방법 |
 | `docs/OBSERVABILITY.md` | 런타임 신호와 에이전트 작업 흔적을 남기는 템플릿 |
 | `docs/PLANS.md` | 실행 계획을 쓸 때의 최소 기준 |
@@ -93,6 +110,14 @@
 4. 저장소 구조가 필요해지는 시점에 `ARCHITECTURE.md`에 선택 이유와 경계를 기록합니다.
 5. 기술 스택을 고르면 `feature_list.json`, `init.sh`, `docs/QUALITY_SCORE.md`도 함께 갱신합니다.
 6. GUI 작업이 시작되면 `DESIGN.md`를 실제 브랜드와 제품 톤에 맞게 고칩니다.
+
+## Maintenance Signals
+
+- 기본 검증: `./init.sh`
+- 기여 가이드: [CONTRIBUTING.md](./CONTRIBUTING.md)
+- 보안 정책: [SECURITY.md](./SECURITY.md)
+- 변경 기록: [CHANGELOG.md](./CHANGELOG.md)
+- 스타터 복사 시뮬레이션: [docs/STARTER_COPY_SIMULATION.md](./docs/STARTER_COPY_SIMULATION.md)
 
 ## Instruction And Design Hierarchy
 

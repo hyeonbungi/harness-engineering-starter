@@ -19,6 +19,9 @@
 | `ARCHITECTURE.md` | 제품/스택/구조 결정 전까지의 구조 기록 위치 |
 | `DESIGN.md` | GUI 작업이 생겼을 때의 전역 디자인 기준 |
 | `LICENSE` | 기본 MIT 라이선스. 라이선스가 바뀌면 이 파일을 먼저 바꿉니다. |
+| `CONTRIBUTING.md` | 공개 기여 방식의 기본 문서. 실제 프로젝트 운영 방식에 맞게 고칩니다. |
+| `SECURITY.md` | 공개 보안 신고 정책. 비공개 신고 경로가 생기면 먼저 갱신합니다. |
+| `CHANGELOG.md` | 태그 릴리스 전 변경 기록의 시작점. 첫 릴리스 전까지 유지할 수 있습니다. |
 | `docs/HARNESS.md` | 문맥, 범위, 계획, 검증, 인계 루프 |
 | `docs/README_MIGRATION.md` | 공개 README 전환 체크리스트 |
 | `docs/product-specs/project-foundation.md` | 첫 제품 정의 템플릿 |
@@ -36,6 +39,7 @@
 | `claude-progress.md` | 스타터 제작 로그를 지우고 새 프로젝트 진행 기록으로 초기화합니다. |
 | `docs/session-handoff.md` | 스타터 인계 내용을 새 프로젝트 인계 내용으로 초기화합니다. |
 | `docs/QUALITY_SCORE.md` | 품질 점수를 실제 프로젝트 상태로 다시 매깁니다. |
+| `docs/STARTER_COPY_SIMULATION.md` | 새 프로젝트 복사 시뮬레이션 결과로 다시 실행하고 갱신합니다. |
 | `ARCHITECTURE.md` | 제품 범위가 정해진 뒤 구조 후보와 결정 근거를 갱신합니다. |
 | `DESIGN.md` | 실제 브랜드, 플랫폼, UI 밀도가 정해지면 교체하거나 확장합니다. |
 
@@ -70,7 +74,11 @@
 현재 스타터는 비밀값을 포함하지 않아야 합니다. 복제 후 실제 프로젝트 정보를 넣기 전후로 다음을 확인합니다.
 
 ```bash
-rg -n --glob '!docs/CLONE_CLEANUP.md' "(token|secret|password|api[_-]?key|credential)\\s*[:=]|BEGIN .*PRIVATE KEY" .
+if rg -n --glob '!SECURITY.md' --glob '!docs/CLONE_CLEANUP.md' "(token|secret|password|api[_-]?key|credential)\\s*[:=]|BEGIN .*PRIVATE KEY" .; then
+  echo "Review matches before committing."
+else
+  echo "No obvious secrets found."
+fi
 ```
 
 발견된 값이 실제 secret이면 커밋하지 말고 환경 변수, secret manager, 배포 플랫폼 secret으로 옮깁니다.
@@ -84,11 +92,13 @@ rg -n --glob '!docs/CLONE_CLEANUP.md' "(token|secret|password|api[_-]?key|creden
 3. `git diff --check`
 4. `README.md`와 `README.ko.md`의 저장소 경로, author, license link 확인
 5. `feature_list.json`, `claude-progress.md`, `docs/session-handoff.md`가 새 프로젝트 상태를 말하는지 확인
+6. `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`가 실제 운영 방식과 맞는지 확인
 
 ## Done Criteria
 
 - 공개 README에서 스타터 저장소 경로가 실제 프로젝트 경로로 바뀌었습니다.
 - 원저작자, 현재 maintainer, 라이선스가 의도대로 표시됩니다.
 - 스타터 제작 로그가 새 프로젝트의 진행 상태처럼 남아 있지 않습니다.
+- 기여, 보안, 변경 기록 문서가 downstream 프로젝트의 공개 운영 방식과 맞습니다.
 - `feature_list.json`에는 실제 프로젝트의 현재 작업과 결정만 남아 있습니다.
 - 검증 명령이 성공하거나, 실패 이유와 다음 행동이 기록되어 있습니다.

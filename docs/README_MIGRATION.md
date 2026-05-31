@@ -27,11 +27,14 @@
 | License | 루트 `LICENSE`를 라이선스 원천으로 두고 README는 링크만 둡니다. | MIT |
 | Tagline | 한 문장으로 프로젝트가 무엇을 하는지 설명합니다. | product-neutral 설명 |
 | Opening paragraph | 스타터 설명을 실제 제품/서비스 설명으로 바꿉니다. | "애플리케이션 코드 없음" 문장 |
+| `Who This Is For` | 실제 프로젝트 대상 사용자와 contributor를 설명합니다. | agent-readable starter 대상 |
+| `Not For` | 오해를 줄이는 비대상과 비목표를 설명합니다. | app scaffold가 아니라는 설명 |
 | `At A Glance` | 목적, 제품 범위, 스택, 저장소 구조, 검증 명령을 실제 값으로 갱신합니다. | 모르는 값은 `TBD` |
 | `Current State` | 프로젝트 이름, 도메인, 스택, 구조, 구현 상태를 갱신합니다. | 불확실한 항목은 숨기지 않음 |
 | `Repository Map` | 실제로 존재하고 중요한 경로만 남깁니다. | 스타터 전용 경로는 실제로 쓰는 경우만 유지 |
 | `Bootstrap` | 새 프로젝트의 설치, 실행, 검증 명령으로 교체합니다. | 기술 스택이 없으면 `./init.sh` |
 | `How To Start A Real Project` | 실제 프로젝트에서는 제거하거나 `Development`/`Contributing`로 바꿉니다. | 스타터 상태일 때만 유지 |
+| `Maintenance Signals` | 기여, 보안, 변경 기록, 검증 위치를 실제 프로젝트 운영 방식으로 바꿉니다. | 스타터 운영 문서 링크 |
 | `Author` | 원저작자와 현재 maintainer를 구분합니다. | 소유권이 바뀌지 않았으면 원저작자 유지 |
 
 ## Badge Rules
@@ -68,6 +71,7 @@ README 전환은 다음을 만족해야 합니다.
 - 스타터 저장소 이름이 실제 프로젝트 이름 자리에 남아 있지 않습니다.
 - 배지가 실제 저장소와 실제 검증 상태를 가리킵니다.
 - 라이선스 정보의 원천은 루트 `LICENSE` 파일이고 README는 그 파일로 연결됩니다.
+- `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`가 실제 프로젝트 운영 방식과 충돌하지 않습니다.
 - 아직 모르는 값은 `TBD`로 남아 있고, 추측한 값으로 채우지 않았습니다.
 - `docs/product-specs/project-foundation.md`와 README의 제품 설명이 충돌하지 않습니다.
 - `./init.sh` 또는 새 검증 명령이 성공합니다.
@@ -81,5 +85,8 @@ README를 바꾼 뒤 함께 확인할 문서입니다.
 - `feature_list.json`
 - `claude-progress.md`
 - `docs/session-handoff.md`
+- `CONTRIBUTING.md`
+- `SECURITY.md`
+- `CHANGELOG.md`
 - `ARCHITECTURE.md`
 - `DESIGN.md` if GUI work exists
