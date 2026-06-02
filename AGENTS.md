@@ -2,9 +2,11 @@
 
 이 저장소는 특정 제품을 넣기 전의 하네스 엔지니어링 스타터입니다. 에이전트의 목적은 구현을 서두르는 것이 아니라, 새 프로젝트가 추측 없이 시작될 수 있도록 문맥, 결정, 검증 방법을 정리하는 것입니다.
 
+> **교차 에이전트 작업 전제**: 이 저장소는 Claude Code·Codex 등 여러 에이전트가 함께 작업할 수 있습니다. `AGENTS.md`는 모든 에이전트의 공통 정본이고 `CLAUDE.md`는 Claude 전용입니다. 한 에이전트의 작업물(문서·코드·결정)은 다른 에이전트가 리뷰할 수 있으니, 에이전트 전용 맥락(세션·메모리)에만 기대지 말고 판단 근거·결정을 공유 문서(`AGENTS.md`·`CLAUDE.md`·`docs/`)에 남겨 검증·인계가 되게 작업합니다.
+
 ## Startup Order
 
-1. `README.md`에서 현재 프로젝트 상태를 확인합니다.
+1. `README.md`에서 현재 프로젝트 상태를, [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md)에서 계정·git·클라우드·에이전트 실행 규약을 확인합니다.
 2. `ARCHITECTURE.md`에서 구조와 의존성 원칙을 확인합니다.
 3. `docs/INSTRUCTION_HIERARCHY.md`에서 전역/스코프 문서 해석 규칙을 확인합니다.
 4. `docs/AGENT_BEHAVIOR.md`에서 에이전트 행동 기준을 확인합니다.
@@ -32,6 +34,9 @@
 - 새 의존성, 런타임, 프레임워크를 추가할 때는 이유와 대안을 기록합니다.
 - 비밀값은 문서나 코드에 쓰지 않습니다. 환경 변수와 최소 권한 원칙을 사용합니다.
 - 파괴적 작업은 실행 전 범위와 되돌림 방법을 명확히 합니다.
+- 커밋과 푸시는 사용자가 명시적으로 요청하거나 승인한 경우에만 수행합니다(완료·검증·관례만으로 자동 커밋·푸시하지 않음).
+- 스킬·MCP·서브에이전트·훅 등 에이전트 확장을 설치·변경할 때는 [`docs/EXTENSIONS.md`](docs/EXTENSIONS.md) 규약(팀 공유·프로젝트-로컬·Claude+Codex)을 따릅니다.
+- 계정·git·클라우드 CLI·에이전트 실행 규약은 [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md)를 따릅니다.
 
 ## Important Files
 
@@ -42,6 +47,9 @@
 | `feature_list.json` | 기능과 결정 상태의 기계 판독용 목록 |
 | `claude-progress.md` | 사람이 읽는 진행 상태 |
 | `docs/HARNESS.md` | 하네스 엔지니어링 적용 원칙 |
+| `docs/ENVIRONMENT.md` | 계정·git·클라우드·에이전트 실행 규약 (템플릿) |
+| `docs/EXTENSIONS.md` | 스킬·MCP·서브에이전트·훅 설치 규약 (팀 공유·크로스 에이전트) |
+| `docs/README_STYLE.md` | README 표현 패턴 (뱃지·경고블록·Mermaid 등) |
 | `docs/AGENT_BEHAVIOR.md` | 에이전트 행동 기준과 완료 전 점검 |
 | `docs/AGENT_WORKFLOWS.md` | 작업 단위, 프롬프트 구조, skill/병렬화/검증 운영 기준 |
 | `docs/BOOTSTRAP.md` | 복제 후 첫 정리 절차 |

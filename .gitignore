@@ -17,3 +17,11 @@ temp/
 # Dependency directories are stack-specific and should be added intentionally.
 node_modules/
 vendor/
+
+# Agent personal/local config (do not commit — see docs/EXTENSIONS.md)
+.claude/settings.local.json
+CLAUDE.local.md
+.claude/CLAUDE.local.md
+
+# Agent skill run outputs
+_workspace/

@@ -18,6 +18,9 @@ required_files=(
   "feature_list.json"
   "claude-progress.md"
   "docs/HARNESS.md"
+  "docs/ENVIRONMENT.md"
+  "docs/EXTENSIONS.md"
+  "docs/README_STYLE.md"
   "docs/AGENT_BEHAVIOR.md"
   "docs/AGENT_WORKFLOWS.md"
   "docs/BOOTSTRAP.md"
@@ -142,6 +145,47 @@ while IFS= read -r design_file; do
     exit 1
   fi
 done < <(find . -name DESIGN.md -type f | sort)
+
+if command -v python3 >/dev/null 2>&1; then
+  python3 - <<'PY'
+import os, re, sys
+
+linkre = re.compile(r'\]\(([^)]+)\)')
+broken = []
+
+for dp, dns, fns in os.walk("."):
+    if os.sep + ".git" in dp:
+        continue
+    for fn in fns:
+        if not fn.endswith(".md"):
+            continue
+        fp = os.path.join(dp, fn)
+        in_fence = False
+        for line in open(fp, encoding="utf-8", errors="replace"):
+            if line.lstrip().startswith("```"):
+                in_fence = not in_fence
+                continue
+            if in_fence:
+                continue
+            for m in linkre.finditer(line):
+                target = m.group(1).strip()
+                if target.startswith(("http://", "https://", "mailto:", "#")):
+                    continue
+                path = target.split("#")[0]
+                if not path:
+                    continue
+                if not os.path.exists(os.path.normpath(os.path.join(dp, path))):
+                    broken.append(f"{os.path.relpath(fp)} -> {target}")
+
+if broken:
+    print("ERROR: broken internal doc links:", file=sys.stderr)
+    for item in broken:
+        print("  " + item, file=sys.stderr)
+    sys.exit(1)
+PY
+else
+  echo "WARN: python3 not found; skipped link integrity check" >&2
+fi
 
 echo "Harness starter baseline OK"
 echo "Tech stack is not selected yet; app setup/build/test commands are intentionally undefined."

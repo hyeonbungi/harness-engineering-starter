@@ -2,9 +2,11 @@
 
 이 저장소는 Claude Code가 새 프로젝트의 문맥을 안정적으로 이어받도록 만든 하네스 엔지니어링 스타터입니다. 제품과 기술 스택은 복제 후 결정합니다.
 
+> **교차 에이전트 전제**: Claude Code의 작업물(문서·코드·결정)은 Codex 등 다른 에이전트가 리뷰할 수 있습니다. 에이전트 전용 맥락(메모리)에만 기대지 말고 판단 근거·결정을 공유 문서(`AGENTS.md`·`docs/`)에 남깁니다. 계정·확장 규약은 [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md)·[`docs/EXTENSIONS.md`](docs/EXTENSIONS.md) 참고.
+
 ## Read First
 
-1. `README.md`
+1. `README.md` · [`docs/ENVIRONMENT.md`](docs/ENVIRONMENT.md) (계정·git·클라우드·에이전트 규약)
 2. `ARCHITECTURE.md`
 3. `docs/HARNESS.md`
 4. `docs/INSTRUCTION_HIERARCHY.md`
@@ -31,6 +33,8 @@
 - GUI를 만들거나 수정하는 모든 작업은 전역 또는 전용 `DESIGN.md`를 읽고 따라야 합니다.
 - 완료 시 `claude-progress.md`와 필요하면 `docs/session-handoff.md`를 갱신합니다.
 - 가능한 경우 `./init.sh`를 실행하고 결과를 기록합니다.
+- 커밋과 푸시는 사용자가 명시적으로 요청·승인한 경우에만 합니다(완료·검증·관례만으로 자동 커밋 금지).
+- 스킬·MCP·의존성을 설치/변경할 때는 [`docs/EXTENSIONS.md`](docs/EXTENSIONS.md) 규약을 따릅니다(팀 공유·프로젝트-로컬·Claude+Codex).
 
 ## Definition Of Done
 
