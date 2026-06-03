@@ -19,7 +19,7 @@ Claude Code·Codex 등 코딩 에이전트에 **새 능력·설정(확장)**을 
 | 종류 | Claude Code 커밋 위치 | Codex 커밋 위치 | 비고 |
 |---|---|---|---|
 | 기본 지침 | `CLAUDE.md`, `AGENTS.md` | `AGENTS.md` | 모든 에이전트 공통 규칙은 `AGENTS.md`에 |
-| 스킬 | `.claude/skills/<name>/SKILL.md` | `.codex/skills/<name>/SKILL.md` | Codex는 **점 있는** `.codex/skills`를 자동 로드 |
+| 스킬 | `.claude/skills/<name>/SKILL.md` | `.codex/skills/<name>/SKILL.md` | **정본은 `.codex/skills`**(Codex 자동 로드); `.claude/skills/<name>`는 거기로 가는 symlink (§4) |
 | 서브에이전트 | `.claude/agents/<name>.md` | `.codex/agents/<name>.toml` | 포맷이 다르므로 각자 작성 |
 | MCP | `.mcp.json` | `.codex/config.toml`의 `[mcp_servers.<name>]` | 실제 secret은 env로 |
 | 훅 | `.claude/settings.json` + `.claude/hooks/*` | `.codex/hooks.json` 또는 `.codex/config.toml` + `.codex/hooks/*` | 자동 실행 — 좁게 걸고 승인 절차 남김 |
@@ -51,7 +51,15 @@ Claude Code·Codex 등 코딩 에이전트에 **새 능력·설정(확장)**을 
 - `SKILL.md`에 name/command, `description`, 절차, 입출력, 검증 기준을 명확히.
 - 긴 참고자료 `references/`, deterministic script `scripts/`, 예시 `examples/`.
 - Claude·Codex 실행 방식이 다르면 같은 이름이라도 각자에 맞춘 `SKILL.md`를 별도 작성.
-- 복사본을 둘 때는 원본 drift를 줄이도록 "동기화 기준 파일"을 명시. 심링크는 팀원 OS·checkout에 따라 깨질 수 있으니 **기본은 실제 파일 커밋**(`cp -RL`로 심링크를 실체화).
+
+### 공유 메커니즘 — 단일 정본 + symlink 브리지 (권장)
+
+복사본을 두 벌 두면 drift가 생기므로 **정본은 `.codex/skills/<name>` 한 곳**에 두고, `.claude/skills/<name>`를 거기로 가는 **상대 symlink**(git에 mode 120000으로 커밋)로 만듭니다.
+
+- Codex는 `.codex/skills`를 네이티브로 자동 로드합니다(변경 없음). Claude Code는 임의 경로를 스킬 소스로 더할 수 없지만 `.claude/skills`가 symlink면 따라갑니다 — symlink가 유일하게 깔끔한 브리지입니다.
+- 새 단일-파일 스킬: `.codex/skills/<name>`에만 추가 → `.claude/skills/<name> → ../../.codex/skills/<name>` symlink. 양쪽 자동 반영, 중복·drift 0.
+- **예외(에이전트별 `SKILL.md`가 다른 스킬)**: 실행 모델이 달라 `SKILL.md`를 공유할 수 없으면, `SKILL.md`는 각자 두고 **공유 `references/`만 단일 정본화**합니다(`.claude/.../references → ../../../.codex/.../references` symlink).
+- **크로스 OS**: symlink는 macOS·Linux·git에서 보존되지만 Windows·`core.symlinks=false`에선 깨질 수 있습니다 → 깨지면 해당 경로를 실제 복사로 fallback. `init.sh`는 `.claude/skills`를 필수로 보지 않고 링크 검사에서 `.claude`/`.codex`를 제외하므로 symlink가 깨져도 실패하지 않습니다(Codex 단독·Windows 보호).
 
 > 설치 후 이 문서에 한 줄 기록: `<name>` · 용도 · Claude/Codex 경로 · 출처·LICENSE.
 

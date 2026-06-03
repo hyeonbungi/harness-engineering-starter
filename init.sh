@@ -152,11 +152,13 @@ if command -v python3 >/dev/null 2>&1; then
   python3 - <<'PY'
 import os, re, sys
 
+# Skip .git, run outputs, and vendored third-party skills (.claude/.codex).
+SKIP_DIRS = {".git", "_workspace", ".claude", ".codex"}
 linkre = re.compile(r'\]\(([^)]+)\)')
 broken = []
 
 for dp, dns, fns in os.walk("."):
-    if os.sep + ".git" in dp:
+    if any(part in SKIP_DIRS for part in dp.split(os.sep)):
         continue
     for fn in fns:
         if not fn.endswith(".md"):
