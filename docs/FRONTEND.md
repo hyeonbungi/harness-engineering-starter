@@ -6,7 +6,7 @@ GUI가 필요한 프로젝트로 전환되면 `DESIGN.md`를 에이전트용 디
 
 `DESIGN.md`는 색상, 타이포그래피, 간격, 컴포넌트 규칙, 금지 사항을 한 파일에 적어 코딩 에이전트가 UI를 일관되게 만들도록 돕는 문서입니다.
 
-현재 루트 `DESIGN.md`는 한국어 단일 원천입니다. 공개 첫 화면인 `README.md`만 영어 기본과 한국어 보조 문서로 이중화하고, 내부 디자인 운영 문서는 실제 작업 언어에 맞춰 한국어로 유지합니다. 영어권 팀으로 전환되거나 외부 기여가 늘어나면 그때 영어화 또는 별도 번역 문서를 검토합니다.
+현재 루트 `DESIGN.md`는 Google `design.md` 형식에 맞춘 한국어 단일 원천입니다. YAML frontmatter는 기계가 읽는 토큰이고, Markdown 본문은 사람이 읽는 적용 기준입니다. 공개 첫 화면인 `README.md`만 영어 기본과 한국어 보조 문서로 이중화하고, 내부 디자인 운영 문서는 실제 작업 언어에 맞춰 한국어로 유지합니다. 영어권 팀으로 전환되거나 외부 기여가 늘어나면 그때 영어화 또는 별도 번역 문서를 검토합니다.
 
 기본 위치는 프로젝트 루트입니다.
 
@@ -29,27 +29,36 @@ path/to/surface/DESIGN.md
 
 GUI를 만들거나 수정하는 작업은 `DESIGN.md` 없이 시작하지 않습니다. 전역 명세만으로 충분한 작은 프로젝트라면 전용 파일은 만들지 않아도 되지만, 그 판단은 작업 문서나 결정 기록에 남깁니다.
 
-## designmd.sh
+## Google design.md Compatibility
 
-외부 디자인 명세를 가져올 때는 `designmd.sh`를 사용할 수 있습니다. 공식 문서 기준으로 CLI는 `npx`로 실행하며, public GitHub source에서 `DESIGN.md`를 가져와 검증한 뒤 현재 프로젝트의 전역 또는 전용 `DESIGN.md` 후보로 쓸 수 있습니다.
+이 스타터는 `google-labs-code/design.md`를 1차 형식 기준으로 봅니다. 기본 구조는 다음과 같습니다.
+
+- YAML frontmatter: `colors`, `typography`, `spacing`, `rounded`, `components` 같은 machine-readable token
+- Markdown body: `Overview`, `Colors`, `Typography`, `Layout`, `Elevation & Depth`, `Shapes`, `Components`, `Do's and Don'ts` 순서의 human-readable rationale
+
+선택 검증으로 Google CLI를 사용할 수 있습니다. 기술 스택이 아직 정해지지 않았으므로 npm 패키지를 저장소 의존성으로 추가하지는 않습니다.
 
 ```bash
-npx designmd.sh add <source>
+npx @google/design.md lint DESIGN.md
 ```
 
-기존 파일을 덮어쓰지 않으려면 출력 위치를 명시합니다.
+두 버전을 비교할 때는 다음 명령을 사용합니다.
 
 ```bash
-npx designmd.sh add <source> --output path/to/DESIGN.md
+npx @google/design.md diff DESIGN.md DESIGN-next.md
 ```
 
-원격 명세는 의존성과 비슷하게 취급합니다.
+검증 도구가 실행되지 않으면 수동으로 frontmatter token, section order, token reference, 접근성 기준을 확인합니다. 자세한 기준은 `docs/references/design-md.md`와 `.codex/skills/design-md/SKILL.md`를 따릅니다.
+
+## External DESIGN.md References
+
+외부 디자인 명세와 샘플은 의존성과 비슷하게 취급합니다.
 
 - 설치 전 원문을 읽습니다.
 - 출처와 라이선스를 확인합니다.
 - 프로젝트 브랜드와 충돌하는 토큰을 그대로 병합하지 않습니다.
 - 프롬프트 인젝션이나 부적절한 에이전트 지시가 없는지 검토합니다.
-- 필요한 경우 `--no-telemetry` 또는 환경 변수를 사용해 원격 이벤트 전송을 끕니다.
+- VoltAgent 샘플은 참고 자료로만 사용하고, 유명 제품의 시각 정체성을 그대로 복제하지 않습니다.
 
 ## When To Replace This Baseline
 
@@ -66,3 +75,4 @@ UI 구현이 생긴 뒤에는 다음 검증을 추가합니다.
 - 모바일과 데스크톱 viewport 확인
 - 텍스트 overflow, 겹침, focus state 확인
 - 접근성 기본 점검
+- 가능하면 `npx @google/design.md lint DESIGN.md`

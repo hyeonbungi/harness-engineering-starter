@@ -22,6 +22,8 @@
 - 복제 후 스타터 제작 이력을 정리하는 `docs/CLONE_CLEANUP.md`를 추가했습니다.
 - 공개 OSS 지원 전 보강으로 `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`, `docs/STARTER_COPY_SIMULATION.md`를 추가했습니다.
 - README에 이 스타터의 대상/비대상과 maintenance signal 링크를 추가했습니다.
+- 루트 `DESIGN.md`를 Google `design.md` 호환 token/rationale 구조로 정리했습니다.
+- `DESIGN.md` 작성, 감사, migration, 선택 검증을 위한 `.codex/skills/design-md/SKILL.md`를 추가했습니다.
 
 ## Next Best Task
 
@@ -35,7 +37,7 @@
 - 라이선스 정보의 원천은 루트 `LICENSE` 파일입니다.
 - 공개 기여, 보안 신고, 변경 기록은 루트 `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`를 기준으로 확인합니다.
 - 스타터 복사 검증은 `docs/STARTER_COPY_SIMULATION.md` 기준으로 재현합니다.
-- GUI 범위가 생기면 한국어 `DESIGN.md` 기준을 먼저 읽습니다.
+- GUI 범위가 생기면 한국어 `DESIGN.md` 기준을 먼저 읽고, 필요한 경우 `.codex/skills/design-md/SKILL.md`를 사용합니다.
 - 복제 후 `docs/CLONE_CLEANUP.md` 기준으로 스타터 제작 로그와 진행 상태를 정리합니다.
 - 첫 사용자와 첫 성공 기준이 정해져 있습니다.
 - `feature_list.json`에서 `PROD-001` 상태가 갱신되어 있습니다.

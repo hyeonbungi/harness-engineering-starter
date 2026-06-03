@@ -69,6 +69,7 @@
 | `CONTRIBUTING.md` | 이 스타터에 대한 공개 기여 가이드 |
 | `SECURITY.md` | 이 스타터에 대한 공개 보안 신고 정책 |
 | `CHANGELOG.md` | 태그 릴리스 전까지의 공개 변경 기록 |
+| `.codex/skills/design-md/SKILL.md` | `DESIGN.md` 작성, 감사, 검증을 돕는 Codex skill |
 | `AGENTS.md` | Codex와 범용 코드 에이전트가 먼저 읽는 작업 지침 |
 | `CLAUDE.md` | Claude Code용 작업 지침 |
 | `ARCHITECTURE.md` | 구조와 의존성 원칙을 기록하는 자리 |

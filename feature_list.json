@@ -3,7 +3,7 @@
   "status": "starter_template",
   "stack": "TBD",
   "repository_shape": "TBD",
-  "last_updated": "2026-05-31",
+  "last_updated": "2026-06-03",
   "rules": {
     "single_active_feature": true,
     "passing_requires_verification": true,
@@ -367,6 +367,38 @@
         "2026-05-31: ./init.sh, feature_list.json validation, git diff --check, temporary copy simulation, and GitHub repository metadata checks passed."
       ],
       "notes": "No release tag or application stack was added. The project remains an early public starter with explicit reuse and maintenance guidance."
+    },
+    {
+      "id": "FND-013",
+      "priority": 13,
+      "area": "design",
+      "title": "Make DESIGN.md spec-compatible and add design-md skill",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "A cloned project has a Google design.md-compatible DESIGN.md baseline and a project-local Codex skill for creating, auditing, migrating, and optionally validating design specifications.",
+      "acceptance_criteria": [
+        "DESIGN.md contains machine-readable colors, typography, spacing, rounded, and component tokens in YAML frontmatter",
+        "DESIGN.md body follows the Google design.md section order where practical while preserving Korean working-language guidance",
+        ".codex/skills/design-md/SKILL.md documents the DESIGN.md creation, audit, migration, and validation workflow",
+        "docs/references/design-md.md records Google design.md as the primary format reference and VoltAgent awesome-design-md as a sample catalog",
+        "docs/design-docs/0005-design-md-spec-compatible-baseline.md records the decision and rollback path",
+        "init.sh validates the new required skill and decision record"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run python3 -m json.tool feature_list.json",
+        "Run git diff --check",
+        "Run npx @google/design.md lint DESIGN.md when Node/npm access is available",
+        "Review .codex/skills/design-md/SKILL.md and docs/references/design-md.md"
+      ],
+      "evidence": [
+        "2026-06-03: Reworked DESIGN.md into Google design.md-compatible token frontmatter and ordered Markdown rationale.",
+        "2026-06-03: Added .codex/skills/design-md/SKILL.md for project-local Codex guidance.",
+        "2026-06-03: Updated docs/FRONTEND.md, docs/EXTENSIONS.md, docs/references/design-md.md, and design decision 0005.",
+        "2026-06-03: ./init.sh, feature_list.json validation, and git diff --check passed.",
+        "2026-06-03: npx @google/design.md lint DESIGN.md passed with no errors and six orphaned-token warnings for reserved starter colors."
+      ],
+      "notes": "The Google CLI remains an optional validation tool, not a repository dependency. VoltAgent examples are references only, not brand assets to copy."
     },
     {
       "id": "TECH-001",

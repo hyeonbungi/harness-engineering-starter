@@ -55,6 +55,12 @@ Claude Code·Codex 등 코딩 에이전트에 **새 능력·설정(확장)**을 
 
 > 설치 후 이 문서에 한 줄 기록: `<name>` · 용도 · Claude/Codex 경로 · 출처·LICENSE.
 
+### 등록된 스킬
+
+| Name | Purpose | Claude path | Codex path | Source / License |
+|---|---|---|---|---|
+| `design-md` | `DESIGN.md` 작성, 감사, migration, 선택 검증 | Not installed | `.codex/skills/design-md/SKILL.md` | Local policy using `google-labs-code/design.md` (Apache-2.0) and `VoltAgent/awesome-design-md` (MIT) references |
+
 ## 5. 서브에이전트 / Custom Agents
 
 - **Claude**: `.claude/agents/<name>.md`(frontmatter `description`·`model`·`tools`를 좁게). skill이 호출하는 agent도 같이 커밋.

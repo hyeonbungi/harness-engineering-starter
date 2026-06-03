@@ -44,6 +44,8 @@
 - [x] 공개 OSS 지원 전 보강용 `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md` 추가
 - [x] README에 대상/비대상과 maintenance signal 섹션 추가
 - [x] 스타터 복사 시뮬레이션 문서 `docs/STARTER_COPY_SIMULATION.md` 추가
+- [x] 루트 `DESIGN.md`를 Google `design.md` 형식과 호환되는 token/rationale 구조로 정리
+- [x] `DESIGN.md` 작성과 검증을 돕는 project-local Codex skill `.codex/skills/design-md/SKILL.md` 추가
 
 ## Not Started
 
@@ -70,3 +72,4 @@
 - 2026-05-31: `DESIGN.md` 본문을 한국어로 전환하고, `docs/FRONTEND.md`와 `docs/README_MIGRATION.md`에 내부 디자인 문서는 한국어 단일 원천이라는 기준을 추가했습니다.
 - 2026-05-31: `docs/CLONE_CLEANUP.md`를 추가하고, 복제 후 keep/reset/decide/remove 기준과 sensitive-information check, simulation check를 문서화했습니다.
 - 2026-05-31: OpenAI Codex OSS 프로그램 지원 전 보강으로 `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`, `docs/STARTER_COPY_SIMULATION.md`를 추가하고 README 대상/비대상/운영 신호를 보강했습니다.
+- 2026-06-03: `DESIGN.md`를 Google `design.md` 형식에 맞춰 frontmatter token과 Markdown rationale 구조로 정리하고, `.codex/skills/design-md/SKILL.md`와 결정 기록 `0005`를 추가했습니다.

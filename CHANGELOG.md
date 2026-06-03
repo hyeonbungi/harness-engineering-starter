@@ -16,6 +16,7 @@ This project has not published a tagged release yet. Until the first release, th
 - Clone cleanup checklist for removing starter-specific history after reuse.
 - Baseline validation through `./init.sh`.
 - Public contribution, security, changelog, and starter copy simulation documents.
+- Google `design.md` compatible `DESIGN.md` baseline and project-local `design-md` Codex skill.
 
 ### Notes
 

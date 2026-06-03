@@ -69,6 +69,7 @@ There is no application code in this repository. Product scope, repository struc
 | `CONTRIBUTING.md` | Public contribution guidance for this starter |
 | `SECURITY.md` | Public security reporting policy for this starter |
 | `CHANGELOG.md` | Public change log before tagged releases exist |
+| `.codex/skills/design-md/SKILL.md` | Codex skill for creating, auditing, and validating DESIGN.md files |
 | `AGENTS.md` | Instructions read first by Codex and general coding agents |
 | `CLAUDE.md` | Instructions for Claude Code |
 | `ARCHITECTURE.md` | Place to record structure and dependency principles |

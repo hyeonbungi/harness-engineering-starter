@@ -6,6 +6,6 @@
 
 ## Current References
 
-- `design-md.md`: `DESIGN.md` 관례 참고
+- `design-md.md`: Google `design.md` 형식과 VoltAgent sample catalog 참고
 - `karpathy-guidelines.md`: 에이전트 행동 기준 참고
 - `avid-codex-builder-course.md`: Codex 운영 패턴 참고
