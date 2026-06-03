@@ -78,6 +78,7 @@
 | `claude-progress.md` | 사람이 읽는 진행 상태와 다음 세션 인계 |
 | `init.sh` | 현재 문서 세트와 기본 형식을 확인하는 검증 스크립트 |
 | `docs/HARNESS.md` | 이 스타터가 따르는 하네스 운영 원칙 |
+| `docs/DESIGN_SOURCES.md` | 향후 브랜드 자산, 폰트, screenshot, reference model을 기록하는 템플릿 |
 | `docs/AGENT_BEHAVIOR.md` | 에이전트가 가정, 범위, 검증을 다루는 기준 |
 | `docs/AGENT_WORKFLOWS.md` | 작업 단위, 프롬프트 구조, skill, 병렬화, 검증 기준 |
 | `docs/BOOTSTRAP.md` | 새 프로젝트로 복사한 뒤 처음 정리할 순서 |

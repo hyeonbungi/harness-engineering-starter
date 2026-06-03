@@ -81,6 +81,7 @@ There is no application code in this repository. Product scope, repository struc
 | `docs/ENVIRONMENT.md` | Account, git, cloud CLI, and agent-execution conventions (template) |
 | `docs/EXTENSIONS.md` | How to install skills, MCP, subagents, and hooks (team-shared, cross-agent) |
 | `docs/README_STYLE.md` | README presentation patterns (badges, alerts, Mermaid, collapsibles) |
+| `docs/DESIGN_SOURCES.md` | Template for future brand assets, fonts, screenshots, and reference models |
 | `docs/AGENT_BEHAVIOR.md` | Rules for how agents handle assumptions, scope, and verification |
 | `docs/AGENT_WORKFLOWS.md` | Task units, prompt structure, skills, parallelism, and verification rules |
 | `docs/BOOTSTRAP.md` | First cleanup steps after copying this starter |

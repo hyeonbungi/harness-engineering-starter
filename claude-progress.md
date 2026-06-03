@@ -46,6 +46,8 @@
 - [x] 스타터 복사 시뮬레이션 문서 `docs/STARTER_COPY_SIMULATION.md` 추가
 - [x] 루트 `DESIGN.md`를 Google `design.md` 형식과 호환되는 token/rationale 구조로 정리
 - [x] `DESIGN.md` 작성과 검증을 돕는 project-local Codex skill `.codex/skills/design-md/SKILL.md` 추가
+- [x] 성숙한 downstream 프로젝트의 디자인 에이전트 문서화 패턴을 브랜드 중립 방식으로 역반영
+- [x] 향후 브랜드 자산, 폰트, screenshot, reference model을 기록하는 `docs/DESIGN_SOURCES.md` 추가
 
 ## Not Started
 
@@ -73,3 +75,4 @@
 - 2026-05-31: `docs/CLONE_CLEANUP.md`를 추가하고, 복제 후 keep/reset/decide/remove 기준과 sensitive-information check, simulation check를 문서화했습니다.
 - 2026-05-31: OpenAI Codex OSS 프로그램 지원 전 보강으로 `CONTRIBUTING.md`, `SECURITY.md`, `CHANGELOG.md`, `docs/STARTER_COPY_SIMULATION.md`를 추가하고 README 대상/비대상/운영 신호를 보강했습니다.
 - 2026-06-03: `DESIGN.md`를 Google `design.md` 형식에 맞춰 frontmatter token과 Markdown rationale 구조로 정리하고, `.codex/skills/design-md/SKILL.md`와 결정 기록 `0005`를 추가했습니다.
+- 2026-06-04: `seoul-game-town`의 성숙한 디자인 에이전트 문서화에서 source-of-truth, scoped DESIGN.md, design source evidence, Adopt/Do Not Adopt reference model 패턴만 일반화해 반영했습니다. 브랜드, 앱, 자산, 패키지 결정은 가져오지 않았습니다.

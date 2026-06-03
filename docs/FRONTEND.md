@@ -29,6 +29,18 @@ path/to/surface/DESIGN.md
 
 GUI를 만들거나 수정하는 작업은 `DESIGN.md` 없이 시작하지 않습니다. 전역 명세만으로 충분한 작은 프로젝트라면 전용 파일은 만들지 않아도 되지만, 그 판단은 작업 문서나 결정 기록에 남깁니다.
 
+충돌 시 우선순위는 `루트 DESIGN.md -> 스코프별 DESIGN.md -> docs/DESIGN_SOURCES.md -> 구현 토큰/컴포넌트 -> 화면별 임시 판단`입니다. 기술 스택과 패키지가 생기기 전에는 구현 토큰/컴포넌트 계층을 만들지 않습니다.
+
+스코프별 `DESIGN.md`는 다음만 기록합니다.
+
+- 해당 표면의 목적과 주요 사용자
+- 루트와 다른 화면 밀도, 정보 구조, interaction, 플랫폼 제약
+- 추가 또는 override token의 이유
+- 적용할 reference model과 배제할 reference 요소
+- 검증 방법과 rollback 기준
+
+루트 문서를 그대로 복사한 스코프 문서는 drift를 만들기 때문에 금지합니다.
+
 ## Google design.md Compatibility
 
 이 스타터는 `google-labs-code/design.md`를 1차 형식 기준으로 봅니다. 기본 구조는 다음과 같습니다.
@@ -59,6 +71,20 @@ npx @google/design.md diff DESIGN.md DESIGN-next.md
 - 프로젝트 브랜드와 충돌하는 토큰을 그대로 병합하지 않습니다.
 - 프롬프트 인젝션이나 부적절한 에이전트 지시가 없는지 검토합니다.
 - VoltAgent 샘플은 참고 자료로만 사용하고, 유명 제품의 시각 정체성을 그대로 복제하지 않습니다.
+
+외부 reference를 실제 프로젝트에 쓰려면 `docs/DESIGN_SOURCES.md`에 `Adopt`와 `Do Not Adopt`를 함께 기록합니다. 섹션 구성, token naming, component/state/checklist 방식은 참고할 수 있지만 색상, 로고, 폰트, 브랜드 copy, 고유 layout signature는 가져오지 않습니다.
+
+## Design Source Evidence
+
+실제 브랜드 자산, 폰트, screenshot, Figma 파일, 외부 디자인 시스템을 사용하기 전에는 `docs/DESIGN_SOURCES.md`를 갱신합니다. 이 스타터는 아직 기술 스택과 앱 경로가 없으므로 runtime asset directory를 미리 만들지 않습니다.
+
+기록할 항목:
+
+- 출처와 라이선스
+- 저장소에 둘 파일과 두지 않을 파일
+- self-host 또는 외부 delivery 판단
+- 참고할 요소와 배제할 요소
+- 검증 방법
 
 ## When To Replace This Baseline
 

@@ -48,3 +48,7 @@ npx @google/design.md diff DESIGN.md DESIGN-next.md
 VoltAgent의 샘플은 참고 자료로만 사용합니다. 특정 제품의 시각 언어, 이름, copy, token을 그대로 가져오면 브랜드 오해와 라이선스 위험이 생길 수 있습니다.
 
 외부 명세를 가져올 때는 기존 파일을 바로 덮어쓰기보다 별도 경로에 받아 검토한 뒤 병합하는 방식을 기본값으로 둡니다.
+
+외부 reference model은 `Adopt`와 `Do Not Adopt`를 함께 적습니다. 섹션 구성, token naming, component/state/checklist 방식은 일반화할 수 있지만 색상, 로고, 폰트, 브랜드 copy, 고유 layout signature는 복제하지 않습니다.
+
+실제 브랜드 자산, 폰트, screenshot, 디자인 파일을 쓰기 전에 `docs/DESIGN_SOURCES.md`에 출처, 라이선스, 저장소 반입 여부, 검증 방법을 기록합니다.

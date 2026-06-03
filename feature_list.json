@@ -3,7 +3,7 @@
   "status": "starter_template",
   "stack": "TBD",
   "repository_shape": "TBD",
-  "last_updated": "2026-06-03",
+  "last_updated": "2026-06-04",
   "rules": {
     "single_active_feature": true,
     "passing_requires_verification": true,
@@ -399,6 +399,41 @@
         "2026-06-03: npx @google/design.md lint DESIGN.md passed with no errors and six orphaned-token warnings for reserved starter colors."
       ],
       "notes": "The Google CLI remains an optional validation tool, not a repository dependency. VoltAgent examples are references only, not brand assets to copy."
+    },
+    {
+      "id": "FND-014",
+      "priority": 14,
+      "area": "design",
+      "title": "Back-port design agent documentation patterns",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "A cloned project has stronger design-agent documentation for source-of-truth order, scoped DESIGN.md files, design source evidence, and safe external reference use.",
+      "acceptance_criteria": [
+        "DESIGN.md defines a source-of-truth order that remains valid before a technical stack exists",
+        "docs/DESIGN_SOURCES.md provides a neutral template for future brand assets, fonts, screenshots, and reference models",
+        "docs/FRONTEND.md explains scoped DESIGN.md contents without requiring app directories or implementation packages",
+        ".codex/skills/design-md/SKILL.md requires source evidence, scoped-document discipline, and Adopt / Do Not Adopt reference models",
+        "docs/design-docs/0006-design-agent-documentation-patterns.md records the source pattern, exclusions, trade-offs, and rollback path",
+        "init.sh validates the new required design source and decision documents"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run python3 -m json.tool feature_list.json",
+        "Run git diff --check",
+        "Run npx -y @google/design.md lint DESIGN.md",
+        "Review that no Seoul Game Town brand tokens, app names, assets, or stack-specific package paths were copied into the starter baseline"
+      ],
+      "evidence": [
+        "2026-06-04: Reviewed Seoul Game Town root DESIGN.md, scoped app DESIGN.md, docs/FRONTEND.md, docs/DESIGN_ASSETS.md, and design-md-spec skill for generalizable documentation patterns.",
+        "2026-06-04: Added docs/DESIGN_SOURCES.md as a product-neutral source evidence template.",
+        "2026-06-04: Updated DESIGN.md, docs/FRONTEND.md, docs/references/design-md.md, and .codex/skills/design-md/SKILL.md with source-of-truth, scoped DESIGN.md, and Adopt / Do Not Adopt guidance.",
+        "2026-06-04: Added design decision 0006 and connected README, CHANGELOG, feature_list.json, progress, handoff, and init.sh.",
+        "2026-06-04: ./init.sh, feature_list.json validation, and git diff --check passed.",
+        "2026-06-04: npx -y @google/design.md lint DESIGN.md passed with no errors and six reserved starter color warnings.",
+        "2026-06-04: Brand-token search found no Seoul Game Town brand names, asset names, or app names in the starter design baseline.",
+        "2026-06-04: Directory check confirmed no apps, libs, or packages directories were added."
+      ],
+      "notes": "Brand, asset, app, UI library, and package decisions from the downstream project were intentionally excluded because this starter is still stack-neutral."
     },
     {
       "id": "TECH-001",

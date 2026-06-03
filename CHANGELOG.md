@@ -17,6 +17,7 @@ This project has not published a tagged release yet. Until the first release, th
 - Baseline validation through `./init.sh`.
 - Public contribution, security, changelog, and starter copy simulation documents.
 - Google `design.md` compatible `DESIGN.md` baseline and project-local `design-md` Codex skill.
+- Design-agent documentation patterns for source-of-truth order, scoped `DESIGN.md` files, source evidence, and `Adopt` / `Do Not Adopt` reference models.
 
 ### Notes
 
