@@ -70,6 +70,7 @@
 | `SECURITY.md` | 이 스타터에 대한 공개 보안 신고 정책 |
 | `CHANGELOG.md` | 태그 릴리스 전까지의 공개 변경 기록 |
 | `.codex/skills/design-md/SKILL.md` | `DESIGN.md` 작성, 감사, 검증을 돕는 Codex skill |
+| `.claude/skills` | 커밋된 Codex skill을 Claude Code에 노출하는 symlink |
 | `AGENTS.md` | Codex와 범용 코드 에이전트가 먼저 읽는 작업 지침 |
 | `CLAUDE.md` | Claude Code용 작업 지침 |
 | `ARCHITECTURE.md` | 구조와 의존성 원칙을 기록하는 자리 |
@@ -78,7 +79,13 @@
 | `claude-progress.md` | 사람이 읽는 진행 상태와 다음 세션 인계 |
 | `init.sh` | 현재 문서 세트와 기본 형식을 확인하는 검증 스크립트 |
 | `docs/HARNESS.md` | 이 스타터가 따르는 하네스 운영 원칙 |
+| `docs/ENVIRONMENT.md` | 계정, git, cloud CLI, 에이전트 실행 규약 템플릿 |
+| `docs/EXTENSIONS.md` | skill, MCP, subagent, hook을 팀 공유 방식으로 설치하는 규약 |
+| `docs/README_STYLE.md` | README 표현 패턴과 시각 요소 기준 |
 | `docs/DESIGN_SOURCES.md` | 향후 브랜드 자산, 폰트, screenshot, reference model을 기록하는 템플릿 |
+| `docs/TECHNICAL_DECISIONS.md` | 스택과 아키텍처 결정 요약을 모으는 템플릿 |
+| `docs/TECHNICAL_DECISION_BACKLOG.md` | open, accepted, deferred 기술 결정을 추적하는 템플릿 |
+| `docs/VALIDATION.md` | 스타터 기준선부터 runtime/release까지의 검증 ladder |
 | `docs/AGENT_BEHAVIOR.md` | 에이전트가 가정, 범위, 검증을 다루는 기준 |
 | `docs/AGENT_WORKFLOWS.md` | 작업 단위, 프롬프트 구조, skill, 병렬화, 검증 기준 |
 | `docs/BOOTSTRAP.md` | 새 프로젝트로 복사한 뒤 처음 정리할 순서 |
@@ -86,6 +93,8 @@
 | `docs/README_MIGRATION.md` | 공개 README를 실제 프로젝트용으로 바꾸는 체크리스트 |
 | `docs/STARTER_COPY_SIMULATION.md` | 스타터가 깨끗하게 복사되는지 확인하는 증거 템플릿 |
 | `docs/INSTRUCTION_HIERARCHY.md` | 전역/스코프 지침 문서를 해석하는 방법 |
+| `docs/FRONTEND.md` | Frontend와 scoped `DESIGN.md` 운영 기준 |
+| `docs/VISUAL_VALIDATION.md` | 향후 GUI scaffold의 시각 검증 템플릿 |
 | `docs/OBSERVABILITY.md` | 런타임 신호와 에이전트 작업 흔적을 남기는 템플릿 |
 | `docs/PLANS.md` | 실행 계획을 쓸 때의 최소 기준 |
 | `docs/product-specs/` | 제품 문제, 사용자, 성공 기준을 적는 위치 |
@@ -110,8 +119,9 @@
 2. `docs/CLONE_CLEANUP.md`를 따라 스타터 제작 이력, 진행 기록, feature history를 초기화합니다.
 3. `docs/product-specs/project-foundation.md`에 문제 정의, 대상 사용자, 첫 성공 기준을 적습니다.
 4. 저장소 구조가 필요해지는 시점에 `ARCHITECTURE.md`에 선택 이유와 경계를 기록합니다.
-5. 기술 스택을 고르면 `feature_list.json`, `init.sh`, `docs/QUALITY_SCORE.md`도 함께 갱신합니다.
-6. GUI 작업이 시작되면 `DESIGN.md`를 실제 브랜드와 제품 톤에 맞게 고칩니다.
+5. 기술 선택이 구체화되면 `docs/TECHNICAL_DECISIONS.md`와 `docs/TECHNICAL_DECISION_BACKLOG.md`를 갱신합니다.
+6. 기술 스택을 고르면 `feature_list.json`, `init.sh`, `docs/VALIDATION.md`, `docs/QUALITY_SCORE.md`도 함께 갱신합니다.
+7. GUI 작업이 시작되면 `DESIGN.md`를 실제 브랜드와 제품 톤에 맞게 고치고, `docs/VISUAL_VALIDATION.md`를 실제 검증에 연결합니다.
 
 ## Maintenance Signals
 

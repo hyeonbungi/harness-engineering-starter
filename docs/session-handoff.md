@@ -26,6 +26,9 @@
 - `DESIGN.md` 작성, 감사, migration, 선택 검증을 위한 `.codex/skills/design-md/SKILL.md`를 추가했습니다.
 - 성숙한 downstream 프로젝트의 디자인 에이전트 문서화 패턴을 분석해 source-of-truth order, scoped `DESIGN.md`, design source evidence, Adopt/Do Not Adopt reference model 규칙으로 일반화했습니다.
 - 향후 브랜드 자산, 폰트, screenshot, 외부 reference model을 기록하는 `docs/DESIGN_SOURCES.md`를 추가했습니다.
+- `.codex/skills`를 project-local skill 단일 정본으로 두고 `.claude/skills` symlink로 Claude Code에도 노출했습니다.
+- 복제 후 실제 프로젝트가 성장할 때 사용할 `docs/TECHNICAL_DECISIONS.md`, `docs/TECHNICAL_DECISION_BACKLOG.md`, `docs/VALIDATION.md`, `docs/VISUAL_VALIDATION.md` 템플릿을 추가했습니다.
+- downstream 프로젝트의 앱, 스택, 클라우드, 브랜드, 자산 값은 스타터에 복사하지 않았습니다.
 
 ## Next Best Task
 
@@ -42,6 +45,9 @@
 - GUI 범위가 생기면 한국어 `DESIGN.md` 기준을 먼저 읽고, 필요한 경우 `.codex/skills/design-md/SKILL.md`를 사용합니다.
 - 실제 브랜드 자산이나 외부 reference를 적용하기 전에는 `docs/DESIGN_SOURCES.md`에 출처, 라이선스, Adopt/Do Not Adopt, 저장소 반입 여부를 기록합니다.
 - 앱, 패키지, UI 라이브러리, design token package는 기술 스택과 repository shape가 정해진 뒤에만 추가합니다.
+- 기술 선택이 구체화되면 `docs/TECHNICAL_DECISIONS.md`와 `docs/TECHNICAL_DECISION_BACKLOG.md`를 갱신합니다.
+- 검증 명령이 생기면 `docs/VALIDATION.md`, `feature_list.json`, `init.sh`가 같은 검증 표면을 말해야 합니다.
+- GUI scaffold가 생기면 `docs/VISUAL_VALIDATION.md`의 screenshot, overflow, focus, 상태 표현 기준을 실제 명령과 artifact에 연결합니다.
 - 복제 후 `docs/CLONE_CLEANUP.md` 기준으로 스타터 제작 로그와 진행 상태를 정리합니다.
 - 첫 사용자와 첫 성공 기준이 정해져 있습니다.
 - `feature_list.json`에서 `PROD-001` 상태가 갱신되어 있습니다.

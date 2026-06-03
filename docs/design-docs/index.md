@@ -10,6 +10,7 @@
 - `0004-agent-workflow-operating-model.md`
 - `0005-design-md-spec-compatible-baseline.md`
 - `0006-design-agent-documentation-patterns.md`
+- `0007-downstream-pattern-backport.md`
 
 ## Template
 

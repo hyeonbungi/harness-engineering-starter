@@ -436,6 +436,38 @@
       "notes": "Brand, asset, app, UI library, and package decisions from the downstream project were intentionally excluded because this starter is still stack-neutral."
     },
     {
+      "id": "FND-015",
+      "priority": 15,
+      "area": "validation",
+      "title": "Back-port downstream growth patterns",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "A cloned project has clearer guidance for cross-agent skills, technical decision summaries, decision backlog, validation growth, and visual QA without inheriting a downstream app stack.",
+      "acceptance_criteria": [
+        ".codex/skills remains the single source of truth for project-local skills",
+        ".claude/skills exposes the committed Codex skills to Claude Code through a symlink",
+        "docs/TECHNICAL_DECISIONS.md and docs/TECHNICAL_DECISION_BACKLOG.md provide product-neutral templates",
+        "docs/VALIDATION.md defines the validation ladder from starter baseline to runtime and release checks",
+        "docs/VISUAL_VALIDATION.md defines a product-neutral visual QA template for future GUI scaffold work",
+        "docs/design-docs/0007-downstream-pattern-backport.md records source patterns, exclusions, trade-offs, and rollback"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run python3 -m json.tool feature_list.json",
+        "Run git diff --check",
+        "Run npx -y @google/design.md lint DESIGN.md",
+        "Verify no downstream app directories, package manifests, stack choices, or brand tokens were added"
+      ],
+      "evidence": [
+        "2026-06-04: Reviewed Seoul Game Town's technical decision backlog, stack validation record, visual validation policy, local development policy, shared skill symlink decision, and validation scripts.",
+        "2026-06-04: Added product-neutral technical decision, decision backlog, validation ladder, and visual validation templates.",
+        "2026-06-04: Added .claude/skills symlink to expose .codex/skills to Claude Code without duplicating skill files.",
+        "2026-06-04: Added frontmatter to .codex/skills/design-md/SKILL.md and updated init.sh to validate project-local skill metadata.",
+        "2026-06-04: Added design decision 0007 and connected README, bootstrap, frontend, extensions, changelog, progress, handoff, and init.sh."
+      ],
+      "notes": "Specific downstream apps, packages, stacks, cloud providers, brand tokens, and assets remain excluded."
+    },
+    {
       "id": "TECH-001",
       "priority": 20,
       "area": "technical_foundation",

@@ -1,3 +1,8 @@
+---
+name: design-md
+description: Create, audit, migrate, and validate DESIGN.md files while preserving project facts, source evidence, scoped design hierarchy, and Google design.md compatibility.
+---
+
 # design-md
 
 Use this skill when creating, reviewing, migrating, or validating a `DESIGN.md` file for a project or scoped UI surface.

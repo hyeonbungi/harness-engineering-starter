@@ -70,6 +70,7 @@ There is no application code in this repository. Product scope, repository struc
 | `SECURITY.md` | Public security reporting policy for this starter |
 | `CHANGELOG.md` | Public change log before tagged releases exist |
 | `.codex/skills/design-md/SKILL.md` | Codex skill for creating, auditing, and validating DESIGN.md files |
+| `.claude/skills` | Symlink exposing committed Codex skills to Claude Code |
 | `AGENTS.md` | Instructions read first by Codex and general coding agents |
 | `CLAUDE.md` | Instructions for Claude Code |
 | `ARCHITECTURE.md` | Place to record structure and dependency principles |
@@ -82,6 +83,9 @@ There is no application code in this repository. Product scope, repository struc
 | `docs/EXTENSIONS.md` | How to install skills, MCP, subagents, and hooks (team-shared, cross-agent) |
 | `docs/README_STYLE.md` | README presentation patterns (badges, alerts, Mermaid, collapsibles) |
 | `docs/DESIGN_SOURCES.md` | Template for future brand assets, fonts, screenshots, and reference models |
+| `docs/TECHNICAL_DECISIONS.md` | Template entry point for stack and architecture decision summaries |
+| `docs/TECHNICAL_DECISION_BACKLOG.md` | Template for open, accepted, deferred, and directional technical decisions |
+| `docs/VALIDATION.md` | Validation ladder from starter baseline to runtime and release checks |
 | `docs/AGENT_BEHAVIOR.md` | Rules for how agents handle assumptions, scope, and verification |
 | `docs/AGENT_WORKFLOWS.md` | Task units, prompt structure, skills, parallelism, and verification rules |
 | `docs/BOOTSTRAP.md` | First cleanup steps after copying this starter |
@@ -89,6 +93,8 @@ There is no application code in this repository. Product scope, repository struc
 | `docs/README_MIGRATION.md` | Checklist for turning the public README into a project-specific README |
 | `docs/STARTER_COPY_SIMULATION.md` | Evidence template for checking whether the starter copies cleanly |
 | `docs/INSTRUCTION_HIERARCHY.md` | How to resolve global and scoped instruction files |
+| `docs/FRONTEND.md` | Frontend and scoped DESIGN.md operating notes |
+| `docs/VISUAL_VALIDATION.md` | Visual QA template for future GUI scaffold work |
 | `docs/OBSERVABILITY.md` | Template for runtime signals and agent work traces |
 | `docs/PLANS.md` | Minimum rules for writing execution plans |
 | `docs/product-specs/` | Place to define product problem, users, and success criteria |
@@ -113,8 +119,9 @@ There is no application code in this repository. Product scope, repository struc
 2. Follow `docs/CLONE_CLEANUP.md` and reset starter-specific progress, handoff, and feature history.
 3. Fill out `docs/product-specs/project-foundation.md` with the problem statement, target users, and first success criteria.
 4. When repository structure becomes necessary, record the choice and boundaries in `ARCHITECTURE.md`.
-5. When a technical stack is chosen, update `feature_list.json`, `init.sh`, and `docs/QUALITY_SCORE.md` together.
-6. When GUI work begins, revise `DESIGN.md` for the actual brand and product tone.
+5. When technical choices become concrete, update `docs/TECHNICAL_DECISIONS.md` and `docs/TECHNICAL_DECISION_BACKLOG.md`.
+6. When a technical stack is chosen, update `feature_list.json`, `init.sh`, `docs/VALIDATION.md`, and `docs/QUALITY_SCORE.md` together.
+7. When GUI work begins, revise `DESIGN.md` for the actual brand and product tone and connect `docs/VISUAL_VALIDATION.md` to real checks.
 
 ## Maintenance Signals
 

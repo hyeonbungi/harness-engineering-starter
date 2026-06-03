@@ -102,3 +102,5 @@ UI 구현이 생긴 뒤에는 다음 검증을 추가합니다.
 - 텍스트 overflow, 겹침, focus state 확인
 - 접근성 기본 점검
 - 가능하면 `npx @google/design.md lint DESIGN.md`
+
+시각 검증의 세부 기준과 artifact 정책은 `docs/VISUAL_VALIDATION.md`에 둡니다. 첫 GUI scaffold가 생기기 전에는 screenshot suite나 runtime asset directory를 미리 만들지 않습니다.

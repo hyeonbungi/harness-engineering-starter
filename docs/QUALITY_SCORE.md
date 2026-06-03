@@ -13,6 +13,9 @@
 | Handoff | B | 진행/인계 문서 있음 | 낮음 | 실제 작업마다 갱신 |
 | Frontend Design Support | B | 전역/스코프 DESIGN.md 규칙 있음 | 중간 | 실제 브랜드와 플랫폼별 명세로 갱신 |
 | Agent Workflow Support | B | task brief, skill, 병렬화, 검증 ladder 기준 있음 | 중간 | 실제 반복 작업이 생기면 skill로 승격 |
+| Technical Decision Support | B | 결정 요약/백로그 템플릿 있음 | 중간 | 실제 stack 후보와 검증 결과로 갱신 |
+| Validation Growth | B | baseline부터 runtime/release까지 검증 ladder 있음 | 중간 | 실제 setup/build/test/smoke 명령 연결 |
+| Visual Validation Support | B | GUI scaffold 이후 시각 검증 템플릿 있음 | 중간 | 실제 screenshot/browser artifact 연결 |
 
 ## Interpretation
 
@@ -28,7 +31,10 @@
 - 첫 실행 가능한 표면이 하나로 좁혀져 있습니다.
 - 기술 스택 선택 근거가 기록되어 있습니다.
 - 로컬 실행 명령과 검증 명령이 있습니다.
+- 기술 결정 요약과 backlog가 현재 상태를 말합니다.
+- 검증 ladder가 실제 명령과 evidence로 확장되어 있습니다.
 - GUI 범위는 적용 가능한 `DESIGN.md` 계층을 갖고 있습니다.
+- GUI가 있으면 시각 검증 기준과 artifact 정책이 있습니다.
 - 다음 세션이 미완성 상태를 확인할 수 있습니다.
 - 에이전트 작업 기준이 가정, 단순성, 추적성, 검증 증거를 확인합니다.
 - 에이전트 workflow 기준이 작업 분리, 표면 선택, skill 승격, 병렬화, 도구 권한을 확인합니다.

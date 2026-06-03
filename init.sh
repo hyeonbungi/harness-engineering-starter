@@ -23,6 +23,9 @@ required_files=(
   "docs/EXTENSIONS.md"
   "docs/README_STYLE.md"
   "docs/DESIGN_SOURCES.md"
+  "docs/TECHNICAL_DECISIONS.md"
+  "docs/TECHNICAL_DECISION_BACKLOG.md"
+  "docs/VALIDATION.md"
   "docs/AGENT_BEHAVIOR.md"
   "docs/AGENT_WORKFLOWS.md"
   "docs/BOOTSTRAP.md"
@@ -31,6 +34,7 @@ required_files=(
   "docs/STARTER_COPY_SIMULATION.md"
   "docs/INSTRUCTION_HIERARCHY.md"
   "docs/FRONTEND.md"
+  "docs/VISUAL_VALIDATION.md"
   "docs/OBSERVABILITY.md"
   "docs/PLANS.md"
   "docs/RELIABILITY.md"
@@ -48,6 +52,7 @@ required_files=(
   "docs/design-docs/0004-agent-workflow-operating-model.md"
   "docs/design-docs/0005-design-md-spec-compatible-baseline.md"
   "docs/design-docs/0006-design-agent-documentation-patterns.md"
+  "docs/design-docs/0007-downstream-pattern-backport.md"
   "docs/references/README.md"
   "docs/references/avid-codex-builder-course.md"
   "docs/references/design-md.md"
@@ -152,6 +157,33 @@ done < <(find . -name DESIGN.md -type f | sort)
 
 if command -v python3 >/dev/null 2>&1; then
   python3 - <<'PY'
+from pathlib import Path
+import re
+import sys
+
+errors = []
+for path in sorted(Path(".codex/skills").glob("*/SKILL.md")):
+    text = path.read_text(encoding="utf-8", errors="replace")
+    if not text.startswith("---\n"):
+        errors.append(f"{path}: missing frontmatter")
+        continue
+    end = text.find("\n---", 4)
+    if end < 0:
+        errors.append(f"{path}: unclosed frontmatter")
+        continue
+    frontmatter = text[4:end]
+    if not re.search(r"^name:\s*.+$", frontmatter, re.M):
+        errors.append(f"{path}: missing name")
+    if not re.search(r"^description:\s*.+$", frontmatter, re.M):
+        errors.append(f"{path}: missing description")
+
+if errors:
+    for error in errors:
+        print(f"ERROR: {error}", file=sys.stderr)
+    sys.exit(1)
+PY
+
+  python3 - <<'PY'
 import os, re, sys
 
 # Skip .git, run outputs, and vendored third-party skills (.claude/.codex).
@@ -191,6 +223,17 @@ if broken:
 PY
 else
   echo "WARN: python3 not found; skipped link integrity check" >&2
+fi
+
+if [[ -L ".claude/skills" ]]; then
+  link_target="$(readlink .claude/skills)"
+  if [[ "$link_target" != "../.codex/skills" ]]; then
+    echo "WARN: .claude/skills should point to ../.codex/skills (found: ${link_target}); see docs/EXTENSIONS.md" >&2
+  fi
+elif [[ -e ".claude/skills" ]]; then
+  echo "WARN: .claude/skills exists but is not a symlink to .codex/skills; see docs/EXTENSIONS.md" >&2
+else
+  echo "WARN: .claude/skills symlink missing; Claude Code will not see shared project skills; see docs/EXTENSIONS.md" >&2
 fi
 
 echo "Harness starter baseline OK"

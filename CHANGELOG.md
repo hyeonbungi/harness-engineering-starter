@@ -18,6 +18,8 @@ This project has not published a tagged release yet. Until the first release, th
 - Public contribution, security, changelog, and starter copy simulation documents.
 - Google `design.md` compatible `DESIGN.md` baseline and project-local `design-md` Codex skill.
 - Design-agent documentation patterns for source-of-truth order, scoped `DESIGN.md` files, source evidence, and `Adopt` / `Do Not Adopt` reference models.
+- Cross-agent skill bridge that exposes committed `.codex/skills` to Claude Code through `.claude/skills`.
+- Product-neutral technical decision summary, decision backlog, validation ladder, and visual validation templates.
 
 ### Notes
 
