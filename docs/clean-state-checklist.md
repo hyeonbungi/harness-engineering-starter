@@ -8,7 +8,7 @@
 - [ ] 변경 범위가 `docs/AGENT_BEHAVIOR.md`의 가정, 단순성, 추적성, 검증 기준과 맞습니다.
 - [ ] 작업 단위, 병렬화, 도구 권한, 행동 검증 여부가 `docs/AGENT_WORKFLOWS.md` 기준과 맞습니다.
 - [ ] 긴 세션이었거나 미검증 항목이 있으면 `docs/session-handoff.md`가 갱신되어 있습니다.
-- [ ] 경로별 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`를 추가했다면 전역 규칙과 충돌하지 않습니다.
+- [ ] 경로별 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`를 추가했다면 전역 규칙과 충돌하지 않습니다. 공유 규칙은 `AGENTS.md`에 두고 `CLAUDE.md`는 포인터나 Claude 전용 예외만 둡니다.
 - [ ] 새로 만든 임시 파일, 디버그 로그, 불필요한 산출물이 없습니다.
 - [ ] 미완성 작업은 숨겨져 있지 않고 `blocked` 또는 `not_started` 상태로 기록되어 있습니다.
 - [ ] 다음 세션이 수동 설명 없이 시작할 수 있습니다.

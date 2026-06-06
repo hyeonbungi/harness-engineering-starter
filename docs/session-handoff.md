@@ -29,6 +29,7 @@
 - `.codex/skills`를 project-local skill 단일 정본으로 두고 `.claude/skills` symlink로 Claude Code에도 노출했습니다.
 - 복제 후 실제 프로젝트가 성장할 때 사용할 `docs/TECHNICAL_DECISIONS.md`, `docs/TECHNICAL_DECISION_BACKLOG.md`, `docs/VALIDATION.md`, `docs/VISUAL_VALIDATION.md` 템플릿을 추가했습니다.
 - downstream 프로젝트의 앱, 스택, 클라우드, 브랜드, 자산 값은 스타터에 복사하지 않았습니다.
+- `AGENTS.md`를 에이전트 지침의 단일 진실 원천으로 두고, `CLAUDE.md`는 `@AGENTS.md` 포인터와 최소 Claude Code 메모만 남겼습니다.
 
 ## Next Best Task
 
@@ -55,6 +56,7 @@
 - GUI 범위가 생기면 적용 가능한 `DESIGN.md` 계층이 정해져 있습니다.
 - 에이전트 작업은 가정 명시, 최소 변경, 추적 가능한 diff, 검증 증거 기준을 따릅니다.
 - 에이전트 작업은 task-first, single-change, plan-first, 행동 검증, tool hygiene 기준을 따릅니다.
+- 공유 에이전트 규칙은 `AGENTS.md`에만 추가하고, `CLAUDE.md`에는 중복 정의하지 않습니다.
 
 ## Known Unknowns
 

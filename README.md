@@ -7,7 +7,7 @@
   <img alt="Status: starter template" src="https://img.shields.io/badge/status-starter_template-2f80ed?style=flat-square">
   <img alt="Stack: TBD" src="https://img.shields.io/badge/stack-TBD-lightgrey?style=flat-square">
   <img alt="Validation: ./init.sh" src="https://img.shields.io/badge/validation-.%2Finit.sh-2ea44f?style=flat-square">
-  <img alt="Agent docs: AGENTS.md plus CLAUDE.md" src="https://img.shields.io/badge/agent_docs-AGENTS.md%20%2B%20CLAUDE.md-7c3aed?style=flat-square">
+  <img alt="Agent docs: AGENTS.md source plus CLAUDE.md pointer" src="https://img.shields.io/badge/agent_docs-AGENTS.md%20source%20%2B%20CLAUDE.md%20pointer-7c3aed?style=flat-square">
   <a href="./LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111827?style=flat-square">
   </a>
@@ -50,7 +50,7 @@ There is no application code in this repository. Product scope, repository struc
 
 - Maintainers starting a new project with coding agents in the loop
 - Teams that want project context, decision records, and validation habits before selecting a stack
-- Repositories that need clear `AGENTS.md`, `CLAUDE.md`, and `DESIGN.md` hierarchy from day one
+- Repositories that need an `AGENTS.md` single source, a Claude Code pointer, and clear `DESIGN.md` hierarchy from day one
 - Starter users who prefer explicit `TBD` fields over guessed product or architecture defaults
 
 ## Not For
@@ -71,8 +71,8 @@ There is no application code in this repository. Product scope, repository struc
 | `CHANGELOG.md` | Public change log before tagged releases exist |
 | `.codex/skills/design-md/SKILL.md` | Codex skill for creating, auditing, and validating DESIGN.md files |
 | `.claude/skills` | Symlink exposing committed Codex skills to Claude Code |
-| `AGENTS.md` | Instructions read first by Codex and general coding agents |
-| `CLAUDE.md` | Instructions for Claude Code |
+| `AGENTS.md` | Single source of truth for Codex, Claude Code, and general coding agent instructions |
+| `CLAUDE.md` | Claude Code entrypoint that delegates shared rules to `@AGENTS.md` |
 | `ARCHITECTURE.md` | Place to record structure and dependency principles |
 | `DESIGN.md` | Global design baseline for future GUI work |
 | `feature_list.json` | Machine-readable tracking for features, documents, and decisions |
@@ -133,7 +133,7 @@ There is no application code in this repository. Product scope, repository struc
 
 ## Instruction And Design Hierarchy
 
-Root-level `AGENTS.md`, `CLAUDE.md`, and `DESIGN.md` are the defaults for the whole repository. If the project grows into multiple apps, packages, libraries, or services, the same file names can be added under narrower paths.
+Root-level `AGENTS.md` and `DESIGN.md` are the defaults for the whole repository. `CLAUDE.md` is kept as a Claude Code entrypoint that points to `AGENTS.md`. If the project grows into multiple apps, packages, libraries, or services, scoped files can be added under narrower paths.
 
 ```text
 AGENTS.md
@@ -144,7 +144,7 @@ path/to/scope/CLAUDE.md
 path/to/scope/DESIGN.md
 ```
 
-Agents read the files from the repository root down to the target path. A scoped file does not replace the root document wholesale; it only adds or explicitly overrides rules for that scope.
+Agents read the files from the repository root down to the target path. A scoped file does not replace the root document wholesale; it only adds or explicitly overrides rules for that scope. Shared agent rules belong in `AGENTS.md`; `CLAUDE.md` should stay a pointer plus narrow Claude-only notes.
 
 Read `DESIGN.md` before creating or changing GUI surfaces. If the global design document is enough, note why. If a scope needs different design rules, add a scoped `DESIGN.md` there.
 

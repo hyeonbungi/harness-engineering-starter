@@ -7,7 +7,7 @@
   <img alt="Status: starter template" src="https://img.shields.io/badge/status-starter_template-2f80ed?style=flat-square">
   <img alt="Stack: TBD" src="https://img.shields.io/badge/stack-TBD-lightgrey?style=flat-square">
   <img alt="Validation: ./init.sh" src="https://img.shields.io/badge/validation-.%2Finit.sh-2ea44f?style=flat-square">
-  <img alt="Agent docs: AGENTS.md plus CLAUDE.md" src="https://img.shields.io/badge/agent_docs-AGENTS.md%20%2B%20CLAUDE.md-7c3aed?style=flat-square">
+  <img alt="Agent docs: AGENTS.md source plus CLAUDE.md pointer" src="https://img.shields.io/badge/agent_docs-AGENTS.md%20source%20%2B%20CLAUDE.md%20pointer-7c3aed?style=flat-square">
   <a href="./LICENSE">
     <img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-111827?style=flat-square">
   </a>
@@ -50,7 +50,7 @@
 
 - 코딩 에이전트를 함께 사용하며 새 프로젝트를 시작하는 maintainer
 - 스택을 고르기 전에 프로젝트 맥락, 결정 기록, 검증 습관을 먼저 세우고 싶은 팀
-- 처음부터 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md` 계층을 명확히 두고 싶은 저장소
+- 처음부터 `AGENTS.md` 단일 정본, Claude Code 포인터, `DESIGN.md` 계층을 명확히 두고 싶은 저장소
 - 제품이나 구조를 추측으로 채우기보다 `TBD`를 명시적으로 남기고 싶은 스타터 사용자
 
 ## Not For
@@ -71,8 +71,8 @@
 | `CHANGELOG.md` | 태그 릴리스 전까지의 공개 변경 기록 |
 | `.codex/skills/design-md/SKILL.md` | `DESIGN.md` 작성, 감사, 검증을 돕는 Codex skill |
 | `.claude/skills` | 커밋된 Codex skill을 Claude Code에 노출하는 symlink |
-| `AGENTS.md` | Codex와 범용 코드 에이전트가 먼저 읽는 작업 지침 |
-| `CLAUDE.md` | Claude Code용 작업 지침 |
+| `AGENTS.md` | Codex, Claude Code, 범용 코드 에이전트 지침의 단일 진실 원천 |
+| `CLAUDE.md` | 공유 규칙을 `@AGENTS.md`로 위임하는 Claude Code entrypoint |
 | `ARCHITECTURE.md` | 구조와 의존성 원칙을 기록하는 자리 |
 | `DESIGN.md` | GUI 작업이 생겼을 때 읽는 전역 디자인 기준 |
 | `feature_list.json` | 기능, 문서, 결정 상태를 기계가 읽을 수 있게 추적 |
@@ -133,7 +133,7 @@
 
 ## Instruction And Design Hierarchy
 
-루트의 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`는 저장소 전체에 적용되는 기본값입니다. 프로젝트가 여러 앱, 라이브러리, 패키지, 서비스로 나뉘면 하위 경로에 같은 이름의 문서를 둘 수 있습니다.
+루트의 `AGENTS.md`와 `DESIGN.md`는 저장소 전체에 적용되는 기본값입니다. `CLAUDE.md`는 Claude Code가 `AGENTS.md`를 발견하도록 두는 entrypoint입니다. 프로젝트가 여러 앱, 라이브러리, 패키지, 서비스로 나뉘면 하위 경로에 스코프 문서를 둘 수 있습니다.
 
 ```text
 AGENTS.md
@@ -144,7 +144,7 @@ path/to/scope/CLAUDE.md
 path/to/scope/DESIGN.md
 ```
 
-에이전트는 작업 대상 파일을 기준으로 루트에서 대상 경로까지의 문서를 순서대로 읽습니다. 하위 경로 문서는 전역 문서를 통째로 대체하지 않고, 그 범위에 필요한 규칙만 추가하거나 명시적으로 덮어씁니다.
+에이전트는 작업 대상 파일을 기준으로 루트에서 대상 경로까지의 문서를 순서대로 읽습니다. 하위 경로 문서는 전역 문서를 통째로 대체하지 않고, 그 범위에 필요한 규칙만 추가하거나 명시적으로 덮어씁니다. 공유 에이전트 규칙은 `AGENTS.md`에 두고, `CLAUDE.md`는 포인터와 좁은 Claude 전용 메모만 둡니다.
 
 GUI를 만들거나 수정할 때는 `DESIGN.md`를 읽습니다. 전역 `DESIGN.md`만으로 충분하면 그 이유를 남기고, 범위별 차이가 있으면 해당 경로에 전용 `DESIGN.md`를 둡니다.
 

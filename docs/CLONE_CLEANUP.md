@@ -15,7 +15,7 @@
 | Path | Why keep it |
 | --- | --- |
 | `AGENTS.md` | 에이전트 시작 순서와 작업 규칙 |
-| `CLAUDE.md` | Claude Code용 시작 순서와 완료 기준 |
+| `CLAUDE.md` | Claude Code가 `AGENTS.md` 정본을 발견하도록 돕는 entrypoint |
 | `ARCHITECTURE.md` | 제품/스택/구조 결정 전까지의 구조 기록 위치 |
 | `DESIGN.md` | GUI 작업이 생겼을 때의 전역 디자인 기준 |
 | `LICENSE` | 기본 MIT 라이선스. 라이선스가 바뀌면 이 파일을 먼저 바꿉니다. |

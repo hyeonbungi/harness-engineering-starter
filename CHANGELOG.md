@@ -20,6 +20,7 @@ This project has not published a tagged release yet. Until the first release, th
 - Design-agent documentation patterns for source-of-truth order, scoped `DESIGN.md` files, source evidence, and `Adopt` / `Do Not Adopt` reference models.
 - Cross-agent skill bridge that exposes committed `.codex/skills` to Claude Code through `.claude/skills`.
 - Product-neutral technical decision summary, decision backlog, validation ladder, and visual validation templates.
+- `AGENTS.md` as the single source of truth with `CLAUDE.md` reduced to a Claude Code entrypoint.
 
 ### Notes
 

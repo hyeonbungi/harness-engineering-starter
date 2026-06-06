@@ -11,6 +11,7 @@
 - `0005-design-md-spec-compatible-baseline.md`
 - `0006-design-agent-documentation-patterns.md`
 - `0007-downstream-pattern-backport.md`
+- `0008-agent-instructions-single-source.md`
 
 ## Template
 

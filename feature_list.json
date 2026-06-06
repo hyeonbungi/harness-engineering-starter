@@ -3,7 +3,7 @@
   "status": "starter_template",
   "stack": "TBD",
   "repository_shape": "TBD",
-  "last_updated": "2026-06-04",
+  "last_updated": "2026-06-06",
   "rules": {
     "single_active_feature": true,
     "passing_requires_verification": true,
@@ -30,13 +30,15 @@
       "user_visible_behavior": "A new agent session can understand the starter purpose, current unknowns, and validation command without external context.",
       "acceptance_criteria": [
         "README.md explains that the repository is product-neutral and stack-neutral",
-        "AGENTS.md and CLAUDE.md define startup order and working rules",
+        "AGENTS.md defines startup order and working rules",
+        "CLAUDE.md delegates shared instructions to @AGENTS.md",
         "ARCHITECTURE.md records that product, stack, and repository shape are TBD",
         "init.sh validates the baseline document set"
       ],
       "verification": [
         "Run ./init.sh",
-        "Verify README.md, AGENTS.md, CLAUDE.md, ARCHITECTURE.md, feature_list.json, and claude-progress.md are present and non-empty"
+        "Verify README.md, AGENTS.md, CLAUDE.md, ARCHITECTURE.md, feature_list.json, and claude-progress.md are present and non-empty",
+        "Verify CLAUDE.md contains @AGENTS.md"
       ],
       "evidence": [
         "2026-05-20: Starter repository reset to generic harness engineering baseline.",
@@ -76,22 +78,25 @@
       "title": "Define global and scoped agent/design document hierarchy",
       "status": "passing",
       "kind": "foundation",
-      "user_visible_behavior": "A cloned project can use root-level and path-specific AGENTS.md, CLAUDE.md, and DESIGN.md files without ambiguity.",
+      "user_visible_behavior": "A cloned project can use AGENTS.md as the agent instruction source of truth, CLAUDE.md as a Claude Code entrypoint, and DESIGN.md for GUI guidance without ambiguity.",
       "acceptance_criteria": [
         "docs/INSTRUCTION_HIERARCHY.md defines global and scoped file resolution",
-        "AGENTS.md and CLAUDE.md require reading applicable scoped documents",
+        "AGENTS.md requires reading applicable scoped documents",
+        "CLAUDE.md points Claude Code to AGENTS.md instead of duplicating scoped rules",
         "docs/FRONTEND.md states that GUI work requires DESIGN.md",
         "Scoped DESIGN.md files are allowed to extend the global design baseline"
       ],
       "verification": [
         "Run ./init.sh",
-        "Verify docs/INSTRUCTION_HIERARCHY.md is present and referenced from README.md, AGENTS.md, and CLAUDE.md",
+        "Verify docs/INSTRUCTION_HIERARCHY.md is present and referenced from README.md and AGENTS.md",
+        "Verify CLAUDE.md delegates shared instructions to @AGENTS.md",
         "Verify docs/FRONTEND.md documents global and scoped DESIGN.md behavior"
       ],
       "evidence": [
         "2026-05-20: Added docs/INSTRUCTION_HIERARCHY.md.",
         "2026-05-20: Added docs/design-docs/0002-scoped-agent-and-design-docs.md.",
-        "2026-05-20: Updated README.md, AGENTS.md, CLAUDE.md, DESIGN.md, and docs/FRONTEND.md with scoped document rules."
+        "2026-05-20: Updated README.md, AGENTS.md, CLAUDE.md, DESIGN.md, and docs/FRONTEND.md with scoped document rules.",
+        "2026-06-06: Reduced CLAUDE.md to a @AGENTS.md entrypoint and moved shared instruction source-of-truth language to AGENTS.md and docs/INSTRUCTION_HIERARCHY.md."
       ],
       "notes": "This supports single-project and multi-scope repositories without preselecting a repository structure."
     },
@@ -153,7 +158,8 @@
       "user_visible_behavior": "Agents have a project-neutral behavior standard for surfacing assumptions, keeping changes small, avoiding unrelated edits, and finishing with verification evidence.",
       "acceptance_criteria": [
         "docs/AGENT_BEHAVIOR.md defines the adapted behavior principles",
-        "AGENTS.md and CLAUDE.md include docs/AGENT_BEHAVIOR.md in startup order",
+        "AGENTS.md includes docs/AGENT_BEHAVIOR.md in startup order",
+        "CLAUDE.md delegates shared startup order to @AGENTS.md",
         "docs/evaluator-rubric.md checks simplicity and traceability",
         "docs/references/karpathy-guidelines.md records source and license context",
         "init.sh validates the new required documents"
@@ -161,7 +167,8 @@
       "verification": [
         "Run ./init.sh",
         "Review docs/AGENT_BEHAVIOR.md",
-        "Verify AGENTS.md and CLAUDE.md route agents to the behavior document",
+        "Verify AGENTS.md routes agents to the behavior document",
+        "Verify CLAUDE.md delegates shared behavior rules to @AGENTS.md",
         "Verify source mapping is recorded in docs/references/karpathy-guidelines.md"
       ],
       "evidence": [
@@ -181,7 +188,8 @@
       "user_visible_behavior": "Agents have a project-neutral workflow model for task briefs, surface selection, single-change execution, skills, parallel work, tool hygiene, and verification depth.",
       "acceptance_criteria": [
         "docs/AGENT_WORKFLOWS.md defines task-first agent workflow rules",
-        "AGENTS.md and CLAUDE.md include docs/AGENT_WORKFLOWS.md in startup order",
+        "AGENTS.md includes docs/AGENT_WORKFLOWS.md in startup order",
+        "CLAUDE.md delegates shared startup order to @AGENTS.md",
         "docs/evaluator-rubric.md checks task separation",
         "docs/references/avid-codex-builder-course.md records source mapping and exclusions",
         "init.sh validates the new required documents"
@@ -466,6 +474,36 @@
         "2026-06-04: Added design decision 0007 and connected README, bootstrap, frontend, extensions, changelog, progress, handoff, and init.sh."
       ],
       "notes": "Specific downstream apps, packages, stacks, cloud providers, brand tokens, and assets remain excluded."
+    },
+    {
+      "id": "FND-016",
+      "priority": 16,
+      "area": "instructions",
+      "title": "Make AGENTS.md the agent instruction source of truth",
+      "status": "passing",
+      "kind": "foundation",
+      "user_visible_behavior": "Claude Code, Codex, and other coding agents use AGENTS.md as the shared instruction source while CLAUDE.md remains a thin Claude Code entrypoint.",
+      "acceptance_criteria": [
+        "AGENTS.md states that it is the common source of truth",
+        "CLAUDE.md contains @AGENTS.md and does not duplicate startup order, working rules, or definition of done",
+        "docs/INSTRUCTION_HIERARCHY.md explains that CLAUDE.md is an entrypoint and narrow Claude-only exception file",
+        "README.md and README.ko.md describe CLAUDE.md as a pointer rather than a second rule source",
+        "init.sh validates that CLAUDE.md delegates to @AGENTS.md",
+        "docs/design-docs/0008-agent-instructions-single-source.md records the decision and rollback path"
+      ],
+      "verification": [
+        "Run ./init.sh",
+        "Run python3 -m json.tool feature_list.json",
+        "Run git diff --check",
+        "Review CLAUDE.md for duplicated shared rules",
+        "Review README.md, README.ko.md, AGENTS.md, and docs/INSTRUCTION_HIERARCHY.md for consistent source-of-truth wording"
+      ],
+      "evidence": [
+        "2026-06-06: Replaced CLAUDE.md with a thin @AGENTS.md entrypoint and Claude-only notes.",
+        "2026-06-06: Updated AGENTS.md, docs/INSTRUCTION_HIERARCHY.md, README files, docs/EXTENSIONS.md, cleanup docs, progress, handoff, and init.sh to reflect AGENTS.md as the single source of truth.",
+        "2026-06-06: Added docs/design-docs/0008-agent-instructions-single-source.md with alternatives and rollback."
+      ],
+      "notes": "Claude-specific exceptions remain allowed only when they are short, non-conflicting, and documented if structural."
     },
     {
       "id": "TECH-001",

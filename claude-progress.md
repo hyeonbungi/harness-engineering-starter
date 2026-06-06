@@ -27,7 +27,7 @@
 ## Done
 
 - [x] 루트 에이전트 지침 작성
-- [x] Claude Code 지침 작성
+- [x] Claude Code entrypoint 작성
 - [x] 기본 아키텍처 문서 작성
 - [x] 하네스 원칙 문서 작성
 - [x] 제품 정의 템플릿 작성
@@ -52,6 +52,7 @@
 - [x] 복제 후 기술 결정 요약과 결정 backlog를 관리하는 `docs/TECHNICAL_DECISIONS.md`, `docs/TECHNICAL_DECISION_BACKLOG.md` 템플릿 추가
 - [x] 스택 선택 이후 검증 범위를 확장하는 `docs/VALIDATION.md` ladder 추가
 - [x] 첫 GUI scaffold 이후 screenshot, overflow, focus, 상태 표현을 확인하는 `docs/VISUAL_VALIDATION.md` 템플릿 추가
+- [x] `AGENTS.md`를 에이전트 지침의 단일 진실 원천으로 고정하고 `CLAUDE.md`를 `@AGENTS.md` 포인터로 축소
 
 ## Not Started
 
@@ -81,3 +82,4 @@
 - 2026-06-03: `DESIGN.md`를 Google `design.md` 형식에 맞춰 frontmatter token과 Markdown rationale 구조로 정리하고, `.codex/skills/design-md/SKILL.md`와 결정 기록 `0005`를 추가했습니다.
 - 2026-06-04: `seoul-game-town`의 성숙한 디자인 에이전트 문서화에서 source-of-truth, scoped DESIGN.md, design source evidence, Adopt/Do Not Adopt reference model 패턴만 일반화해 반영했습니다. 브랜드, 앱, 자산, 패키지 결정은 가져오지 않았습니다.
 - 2026-06-04: `seoul-game-town`의 성장 단계 운영 패턴에서 cross-agent skill bridge, 기술 결정 요약/백로그, 검증 ladder, 시각 검증 템플릿만 일반화해 반영했습니다. downstream 앱, 스택, 클라우드, 브랜드 결정은 가져오지 않았습니다.
+- 2026-06-06: `AGENTS.md`를 Codex, Claude Code, 범용 에이전트 지침의 단일 진실 원천으로 정리하고, `CLAUDE.md`는 `@AGENTS.md` 포인터와 최소 Claude 전용 메모만 남겼습니다.

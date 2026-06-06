@@ -13,8 +13,10 @@ GUI 작업은 제품 형태와 무관하게 디자인 명세가 필요합니다.
 
 전역 문서와 스코프 문서를 같은 이름으로 계층화합니다.
 
-- 루트 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`는 전역 기본값입니다.
-- 하위 경로는 필요할 때 `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`를 추가할 수 있습니다.
+- 루트 `AGENTS.md`는 에이전트 지침의 전역 기본값이자 단일 진실 원천입니다.
+- 루트 `CLAUDE.md`는 Claude Code가 `AGENTS.md`를 발견하도록 돕는 entrypoint입니다.
+- 루트 `DESIGN.md`는 GUI 작업의 전역 디자인 기본값입니다.
+- 하위 경로는 필요할 때 `AGENTS.md`, Claude 전용 entrypoint/예외 파일인 `CLAUDE.md`, `DESIGN.md`를 추가할 수 있습니다.
 - 에이전트는 루트에서 작업 대상 경로까지 문서를 순서대로 읽습니다.
 - 가까운 스코프 문서는 전역 문서를 반복하지 않고 필요한 차이만 추가합니다.
 - GUI 작업은 전역 또는 전용 `DESIGN.md` 없이 시작하지 않습니다.

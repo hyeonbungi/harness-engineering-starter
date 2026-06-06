@@ -12,8 +12,8 @@ CLAUDE.md
 DESIGN.md
 ```
 
-- `AGENTS.md`: Codex 및 범용 코드 에이전트의 전역 작업 규칙
-- `CLAUDE.md`: Claude Code의 전역 작업 규칙
+- `AGENTS.md`: Codex, Claude Code, 범용 코드 에이전트의 전역 작업 규칙이자 단일 진실 원천
+- `CLAUDE.md`: Claude Code가 `AGENTS.md`를 발견하도록 돕는 entrypoint. 공유 규칙을 중복하지 않고 Claude 전용 예외만 짧게 둡니다.
 - `DESIGN.md`: GUI 작업의 전역 디자인 명세
 
 ## Scoped Files
@@ -50,9 +50,9 @@ path/to/scope/DESIGN.md
 
 ## Agent File Rule
 
-여러 애플리케이션, 라이브러리, 서비스, 패키지를 가진 저장소에서는 각 경로에 전용 `AGENTS.md`와 `CLAUDE.md`를 둘 수 있습니다.
+여러 애플리케이션, 라이브러리, 서비스, 패키지를 가진 저장소에서는 각 경로에 전용 `AGENTS.md`를 둘 수 있습니다. Claude Code가 해당 스코프의 지침을 별도 entrypoint로 발견해야 할 때만 가까운 `CLAUDE.md`를 추가합니다.
 
-전용 에이전트 문서에는 다음만 둡니다.
+전용 `AGENTS.md`에는 다음만 둡니다.
 
 - 해당 경로의 책임
 - 실행 및 검증 명령
@@ -60,9 +60,12 @@ path/to/scope/DESIGN.md
 - 의존해도 되는 내부 모듈과 의존하면 안 되는 경계
 - 스코프별 완료 기준
 
+전용 `CLAUDE.md`를 둘 경우에는 `@AGENTS.md` 또는 가까운 스코프 `AGENTS.md` 포인터와 Claude 전용 예외만 둡니다. 공유 규칙은 `AGENTS.md`에 기록합니다.
+
 ## Anti-Patterns
 
 - 루트 문서를 복사해 하위 경로에 그대로 붙여넣기
+- `CLAUDE.md`에 `AGENTS.md`와 같은 시작 순서, 작업 규칙, 완료 기준을 중복 정의하기
 - 전역 hard rule을 하위 경로에서 조용히 완화하기
 - GUI 작업을 하면서 `DESIGN.md`를 읽지 않기
 - 스코프 파일에 제품 결정, 실행 계획, 진행 상태를 섞어 넣기

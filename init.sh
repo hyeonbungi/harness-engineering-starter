@@ -53,6 +53,7 @@ required_files=(
   "docs/design-docs/0005-design-md-spec-compatible-baseline.md"
   "docs/design-docs/0006-design-agent-documentation-patterns.md"
   "docs/design-docs/0007-downstream-pattern-backport.md"
+  "docs/design-docs/0008-agent-instructions-single-source.md"
   "docs/references/README.md"
   "docs/references/avid-codex-builder-course.md"
   "docs/references/design-md.md"
@@ -138,6 +139,11 @@ fi
 
 if [[ "$(head -n 1 DESIGN.md)" != "---" ]]; then
   echo "ERROR: DESIGN.md must start with YAML frontmatter." >&2
+  exit 1
+fi
+
+if ! grep -qx "@AGENTS.md" CLAUDE.md; then
+  echo "ERROR: CLAUDE.md must delegate shared instructions to @AGENTS.md." >&2
   exit 1
 fi
 

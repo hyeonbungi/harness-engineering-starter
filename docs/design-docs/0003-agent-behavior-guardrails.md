@@ -19,7 +19,7 @@
 - 완료 선언은 검증 증거를 요구합니다.
 - 출처와 라이선스는 `docs/references/karpathy-guidelines.md`에 기록합니다.
 
-루트 `AGENTS.md`와 `CLAUDE.md`는 이 문서를 시작 순서와 완료 기준에 포함합니다.
+루트 `AGENTS.md`는 이 문서를 시작 순서와 완료 기준에 포함합니다. `CLAUDE.md`는 `@AGENTS.md` 포인터를 통해 같은 공통 지침을 사용합니다.
 
 ## Consequences
 

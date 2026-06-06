@@ -18,7 +18,7 @@ Claude Code·Codex 등 코딩 에이전트에 **새 능력·설정(확장)**을 
 
 | 종류 | Claude Code 커밋 위치 | Codex 커밋 위치 | 비고 |
 |---|---|---|---|
-| 기본 지침 | `CLAUDE.md`, `AGENTS.md` | `AGENTS.md` | 모든 에이전트 공통 규칙은 `AGENTS.md`에 |
+| 기본 지침 | `CLAUDE.md` entrypoint, `AGENTS.md` 정본 | `AGENTS.md` | 모든 에이전트 공통 규칙은 `AGENTS.md`에 |
 | 스킬 | `.claude/skills/<name>/SKILL.md` | `.codex/skills/<name>/SKILL.md` | **정본은 `.codex/skills`**(Codex 자동 로드); `.claude/skills`는 거기로 가는 directory symlink (§4) |
 | 서브에이전트 | `.claude/agents/<name>.md` | `.codex/agents/<name>.toml` | 포맷이 다르므로 각자 작성 |
 | MCP | `.mcp.json` | `.codex/config.toml`의 `[mcp_servers.<name>]` | 실제 secret은 env로 |
@@ -33,7 +33,7 @@ Claude Code·Codex 등 코딩 에이전트에 **새 능력·설정(확장)**을 
 
 ## 3. 설치 절차
 
-1. **종류를 고릅니다.** 반복 절차·지식 → skill / 외부 연결 → MCP / 전문 역할 → subagent / 자동 정책 → hook·rule / 단순 지침 → `AGENTS.md`·`CLAUDE.md`.
+1. **종류를 고릅니다.** 반복 절차·지식 → skill / 외부 연결 → MCP / 전문 역할 → subagent / 자동 정책 → hook·rule / 단순 지침 → `AGENTS.md`(정본)·`CLAUDE.md`(Claude entrypoint).
 2. **공유 범위를 정합니다.** 팀 공유 → 프로젝트-로컬 경로 커밋 / 개인 실험 → user·global 경로(커밋 안 함).
 3. **양쪽 에이전트 대응을 확인합니다.** 한쪽 전용 기능이면 다른 쪽에 공통 대체 규칙이 필요한지 판단(보통 `AGENTS.md`).
 4. **비밀값·권한을 분리합니다.** config엔 env var 이름만. 최소 권한·최소 tool set으로 시작.
